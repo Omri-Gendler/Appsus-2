@@ -1,13 +1,13 @@
 .mail {
     display: flex;
     align-items: center;
-    padding: 8px 0;
     border-bottom: 1px solid #e0e0e0;
     cursor: pointer;
 }
 
 .mail:hover {
-    background-color: #f5f5f5;
+    box-shadow: inset 1px 0 0 rgb(218, 220, 224), inset -1px 0 0 rgb(218, 220, 224), 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
+    z-index: 2;
 }
 
 .unread-dot {
@@ -35,14 +35,6 @@
     text-overflow: ellipsis;
 }
 
-.mail.read .mail-from,
-.mail.read .mail-subject {
-    font-weight: normal;
-}
-
-.mail-status {
-    width: 24px;
-    flex-shrink: 0;
-    text-align: center;
-
+.delete-btn {
+    margin-right: 50rem;
 }

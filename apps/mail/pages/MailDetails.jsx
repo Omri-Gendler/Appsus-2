@@ -1,6 +1,7 @@
-import { mailService } from "../services/car.service.js"
-const { useParams, useNavigate, Link } = ReactRouterDOM
+import { mailService } from "../services/mail.service.js"
 
+const Router = ReactRouterDOM.HashRouter
+const { useParams, useNavigate, Link, Route, Routes } = ReactRouterDOM
 const { useState, useEffect } = React
 
 export function MailDetails() {
@@ -12,13 +13,16 @@ export function MailDetails() {
 
     useEffect(() => {
         loadMail()
-    }, [params.mail.id])
+    }, [params.mailId])
 
     function loadMail() {
         setIsLoading(true)
-        mailService.get(params.mail.id)
+        mailService.get(params.mailId)
             .then(mail => setMail(mail))
-            .catch(err => console.log('err:', err))
+            .catch(err => {
+                console.log('err:', err)
+                // navigate('/mail')
+            })
             .finally(() => setIsLoading(false))
     }
 
@@ -28,15 +32,36 @@ export function MailDetails() {
     }
 
     if (isLoading) return <div className="loader">Loading...</div>
-
+    if (!mail) return <div>Mail not found!</div>
     return (
-        <section className="mail-details container">
-            <h1>mail: {mail}</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis quae fuga eveniet, quisquam ducimus modi optio in alias accusantium corrupti veritatis commodi tenetur voluptate deserunt nihil quibusdam. Expedita, architecto omnis?</p>
-            <button onClick={onBack}>Back</button>
-            <section>
-                <button ><Link to={`/mail/${mail.prevMailId}`}>Prev mail</Link></button>
-                <button ><Link to={`/mail/${mail.nextMailId}`}>Next mail</Link></button>
+
+        <section className="mail-details-container">
+
+            <aside className="side-bar">
+                <div className="side-bar">
+                    <span><Link to='/mail'>Inbox</Link></span>
+                    <span><Link to='/starred'>Starred</Link></span>
+                    <span><Link to='/snoozed'>Snoozed</Link></span>
+                    <span><Link to='/sent'>Sent</Link></span>
+                    <span><Link to='/drafts'>Drafts</Link></span>
+                </div>
+            </aside>
+
+            <section className="mail-main-content">
+
+                <header className="mail-header">
+                    <button onClick={onBack}>Back</button>
+                </header>
+
+                <h1>{mail.subject}</h1>
+                <p><strong>From:</strong> {mail.from}</p>
+
+                <p>{mail.body}</p>
+
+                <section>
+                    <button><Link to={`/mail/${mail.prevMailId}`}>Prev mail</Link></button>
+                    <button><Link to={`/mail/${mail.nextMailId}`}>Next mail</Link></button>
+                </section>
             </section>
         </section>
     )

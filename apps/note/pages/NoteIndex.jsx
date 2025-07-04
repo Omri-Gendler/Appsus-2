@@ -1,5 +1,3 @@
-import { MailList } from "../cmps/MailList.jsx"
-import { MailFilter } from "../cmps/MailFilter.jsx"
 import { noteService } from "../services/note.service.js"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service.js"
 const { Link } = ReactRouterDOM

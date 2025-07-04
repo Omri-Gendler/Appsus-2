@@ -7,7 +7,6 @@ h1 {
     grid-template-columns: 5rem 95rem;
     height: calc(100vh - 80px);
     color: #3c4043;
-    margin-top: 20px;
 }
 
 .mail-main-content {

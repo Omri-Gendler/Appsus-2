@@ -3,7 +3,7 @@ import { MailFilter } from "../cmps/MailFilter.jsx"
 import { mailService } from "../services/mail.service.js"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service.js"
 
-const { Link } = ReactRouterDOM
+const { Link, Route } = ReactRouterDOM
 const { useState, useEffect } = React
 
 export function MailIndex({ logo }) {
@@ -54,7 +54,7 @@ export function MailIndex({ logo }) {
                     </div>
                 )}
                 <div className="side-bar">
-                    <span><Link to='/inbox'>Inbox</Link></span>
+                    <span><Link to='/mail'>Inbox</Link></span>
                     <span><Link to='/starred'>Starred</Link></span>
                     <span><Link to='/snoozed'>Snoozed</Link></span>
                     <span><Link to='/sent'>Sent</Link></span>
@@ -68,3 +68,4 @@ export function MailIndex({ logo }) {
         </div>
     )
 }
+ 

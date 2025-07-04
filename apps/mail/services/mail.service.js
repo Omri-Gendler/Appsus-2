@@ -1,4 +1,4 @@
-import { loadFromStorage, makeId, saveToStorage, makeLorem } from './util.service.js'
+import { loadFromStorage, makeId, makeLorem, saveToStorage } from './util.service.js'
 import { storageService } from './async-storage.service.js'
 
 const MAIL_KEY = 'mailDB'
@@ -29,13 +29,13 @@ function query(filterBy = {}) {
         })
 }
 
-function get(bookId) {
-    return storageService.get(MAIL_KEY, bookId)
-        .then(_setNextPrevCarId)
+function get(mailId) {
+    return storageService.get(MAIL_KEY, mailId)
+        .then(_setNextPrevMailId)
 }
 
-function remove(bookId) {
-    return storageService.remove(MAIL_KEY, bookId)
+function remove(mailId) {
+    return storageService.remove(MAIL_KEY, mailId)
 }
 
 function save(mail) {
@@ -62,8 +62,8 @@ function _createMails() {
 
             id: 'e101',
             createdAt: 1672531200000, // Jan 1, 2023
-            subject: 'Miss you!',
-            body: makeLorem(15),
+            subject: makeLorem(15),
+            body: makeLorem(400),
             isRead: false,
             sentAt: 1672531205000,
             removedAt: null,
@@ -73,8 +73,8 @@ function _createMails() {
         {
             id: 'e102',
             createdAt: 1675209600000, // Feb 1, 2023
-            subject: 'Project Update',
-            body: makeLorem(15),
+            subject: makeLorem(15),
+            body: makeLorem(400),
             isRead: true,
             sentAt: 1675209605000,
             removedAt: null,
@@ -84,8 +84,8 @@ function _createMails() {
         {
             id: 'e103',
             createdAt: 1677628800000, // Mar 1, 2023
-            subject: 'Invitation',
-            body: makeLorem(15),
+            subject: makeLorem(15),
+            body: makeLorem(400),
             isRead: false,
             sentAt: 1677628805000,
             removedAt: null,
@@ -95,8 +95,8 @@ function _createMails() {
         {
             id: 'e104',
             createdAt: 1680307200000, // Apr 1, 2023
-            subject: 'Sale Alert!',
-            body: makeLorem(15),
+            subject: makeLorem(15),
+            body: makeLorem(400),
             isRead: false,
             sentAt: 1680307205000,
             removedAt: null,
@@ -106,8 +106,8 @@ function _createMails() {
         {
             id: 'e105',
             createdAt: 1682899200000, // May 1, 2023
-            subject: 'Meeting Reminder',
-            body: makeLorem(15),
+            subject: makeLorem(15),
+            body: makeLorem(400),
             isRead: true,
             sentAt: 1682899205000,
             removedAt: null,
@@ -117,8 +117,8 @@ function _createMails() {
         {
             id: 'e106',
             createdAt: 1685577600000, // Jun 1, 2023
-            subject: 'Newsletter',
-            body: makeLorem(15),
+            subject: makeLorem(15),
+            body: makeLorem(400),
             isRead: false,
             sentAt: 1685577605000,
             removedAt: null,
@@ -128,8 +128,8 @@ function _createMails() {
         {
             id: 'e107',
             createdAt: 1688169600000, // Jul 1, 2023
-            subject: 'Flight Confirmation',
-            body: makeLorem(15),
+            subject: makeLorem(15),
+            body: makeLorem(400),
             isRead: true,
             sentAt: 1688169605000,
             removedAt: null,
@@ -139,8 +139,8 @@ function _createMails() {
         {
             id: 'e108',
             createdAt: 1690848000000, // Aug 1, 2023
-            subject: 'Password Reset',
-            body: makeLorem(15),
+            subject: makeLorem(15),
+            body: makeLorem(400),
             isRead: false,
             sentAt: 1690848005000,
             removedAt: null,
@@ -150,8 +150,8 @@ function _createMails() {
         {
             id: 'e109',
             createdAt: 1693526400000, // Sep 1, 2023
-            subject: 'Job Application',
-            body: makeLorem(15),
+            subject: makeLorem(15),
+            body: makeLorem(400),
             isRead: false,
             sentAt: 1693526405000,
             removedAt: null,
@@ -161,8 +161,8 @@ function _createMails() {
         {
             id: 'e110',
             createdAt: 1696118400000, // Oct 1, 2023
-            subject: 'Welcome!',
-            body: makeLorem(15),
+            subject: makeLorem(15),
+            body: makeLorem(400),
             isRead: true,
             sentAt: 1696118405000,
             removedAt: null,
@@ -180,13 +180,13 @@ function _createMail(subject) {
     return mail
 }
 
-function _setNextPrevCarId(mail) {
+function _setNextPrevMailId(mail) {
     return query().then((mails) => {
-        const carIdx = mails.findIndex((currCar) => currCar.id === mail.id)
-        const nextCar = mails[carIdx + 1] ? mails[carIdx + 1] : mails[0]
-        const prevCar = mails[carIdx - 1] ? mails[carIdx - 1] : mails[mails.length - 1]
-        mail.nextCarId = nextCar.id
-        mail.prevCarId = prevCar.id
+        const mailIdx = mails.findIndex((currMail) => currMail.id === mail.id)
+        const nextMail = mails[mailIdx + 1] ? mails[mailIdx + 1] : mails[0]
+        const prevMail = mails[mailIdx - 1] ? mails[mailIdx - 1] : mails[mails.length - 1]
+        mail.nextMailId = nextMail.id
+        mail.prevMailId = prevMail.id
         return mail
     })
 }

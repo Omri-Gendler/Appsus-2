@@ -50,7 +50,14 @@ export function MailDetails() {
             <section className="mail-main-content">
 
                 <header className="mail-header">
-                    <button onClick={onBack}>Back</button>
+                    
+                    <button onClick={onBack} className="fa-solid fa-arrow-left"></button>
+                        <button><Link className="fa-solid fa-backward"
+                            to={`/mail/${mail.prevMailId}`}></Link></button>
+
+                        <button><Link className="fa-solid fa-forward"
+                            to={`/mail/${mail.nextMailId}`}></Link></button>
+
                 </header>
 
                 <h1>{mail.subject}</h1>
@@ -58,11 +65,7 @@ export function MailDetails() {
 
                 <p>{mail.body}</p>
 
-                <section>
-                    <button><Link to={`/mail/${mail.prevMailId}`}>Prev mail</Link></button>
-                    <button><Link to={`/mail/${mail.nextMailId}`}>Next mail</Link></button>
-                </section>
             </section>
-        </section>
+        </section >
     )
 }

@@ -68,7 +68,7 @@ function _createMails() {
             sentAt: 1672531205000,
             removedAt: null,
             from: 'momo@momo.com',
-            to: 'user@appsus.com'
+            to: 'user@appsus.com',
         },
         {
             id: 'e102',

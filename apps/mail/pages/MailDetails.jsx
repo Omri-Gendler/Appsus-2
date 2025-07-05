@@ -59,11 +59,12 @@ export function MailDetails() {
                             to={`/mail/${mail.nextMailId}`}></Link></button>
 
                 </header>
+                
 
                 <h1>{mail.subject}</h1>
                 <p><strong>From:</strong> {mail.from}</p>
 
-                <p>{mail.body}</p>
+                <p className="mail-body">{mail.body}</p>
 
             </section>
         </section >

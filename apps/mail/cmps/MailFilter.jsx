@@ -13,7 +13,7 @@ export function MailFilter({ filterBy, onSetFilterBy, mails }) {
     function handleChange({ target }) {
         const field = target.name
         let value = target.value
-        
+
         switch (target.type) {
             case 'number':
             case 'range':
@@ -46,7 +46,6 @@ export function MailFilter({ filterBy, onSetFilterBy, mails }) {
                     list="isRead"
                     name="isRead"
                     onChange={handleChange}
-                    placeholder="Filter by all / read / unread"
                 />
                 <datalist id="isRead">
                     <option value="all"></option>

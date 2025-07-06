@@ -1,4 +1,4 @@
-input {
+.mail-filter-container input {
     position: relative;
     font-size: 10px;
     left: 100px;
@@ -11,7 +11,9 @@ input {
 }
 
 .filter-section input {
-    border-radius: 5px;
-    width: 100px;
-    height: 20px;
+    width: 5px;
+    height: 8px;
+    position: relative;
+    left: 23px;
+    top: -54px;
 }

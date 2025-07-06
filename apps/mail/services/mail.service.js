@@ -75,7 +75,8 @@ function _createMails() {
             removedAt: null,
             from: 'momo@momo.com',
             to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png'
+            fromImgUrl: '../img/unnamed.png',
+            starred: false
         },
         {
             id: 'e102',
@@ -87,7 +88,8 @@ function _createMails() {
             removedAt: null,
             from: 'sara@work.com',
             to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png'
+            fromImgUrl: '../img/unnamed.png',
+            starred: false
         },
         {
             id: 'e103',
@@ -99,7 +101,8 @@ function _createMails() {
             removedAt: null,
             from: 'david@friends.com',
             to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png'
+            fromImgUrl: '../img/unnamed.png',
+            starred: false
         },
         {
             id: 'e104',
@@ -111,7 +114,8 @@ function _createMails() {
             removedAt: null,
             from: 'store@shop.com',
             to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png'
+            fromImgUrl: '../img/unnamed.png',
+            starred: false
         },
         {
             id: 'e105',
@@ -123,7 +127,8 @@ function _createMails() {
             removedAt: null,
             from: 'boss@company.com',
             to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png'
+            fromImgUrl: '../img/unnamed.png',
+            starred: false
         },
         {
             id: 'e106',
@@ -135,7 +140,8 @@ function _createMails() {
             removedAt: null,
             from: 'newsletter@news.com',
             to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png'
+            fromImgUrl: '../img/unnamed.png',
+            starred: false
         },
         {
             id: 'e107',
@@ -147,7 +153,8 @@ function _createMails() {
             removedAt: null,
             from: 'airline@flights.com',
             to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png'
+            fromImgUrl: '../img/unnamed.png',
+            starred: false
         },
         {
             id: 'e108',
@@ -159,7 +166,8 @@ function _createMails() {
             removedAt: null,
             from: 'support@service.com',
             to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png'
+            fromImgUrl: '../img/unnamed.png',
+            starred: true
         },
         {
             id: 'e109',
@@ -171,7 +179,8 @@ function _createMails() {
             removedAt: null,
             from: 'hr@company.com',
             to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png'
+            fromImgUrl: '../img/unnamed.png',
+            starred: false
         },
         {
             id: 'e110',
@@ -183,7 +192,8 @@ function _createMails() {
             removedAt: null,
             from: 'welcome@service.com',
             to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png'
+            fromImgUrl: '../img/unnamed.png',
+            starred: true
         }
         ]
         saveToStorage(MAIL_KEY, mails)

@@ -8,6 +8,8 @@ export function AppHeader() {
     const isMailSection = location.pathname.startsWith('/mail')
     const currentLogo = isMailSection ? mailLogo : defaultLogo
 
+    
+
     return (
         <header className="app-header">
             <Link to="/">

@@ -29,7 +29,7 @@ export function MailFilter({ filterBy, onSetFilterBy }) {
     const { txt } = filterByToEdit
     return (
         <div className="mail-filter-container">
-            <input onChange={handleChange} value={txt} name="txt" id="txt" type="text" />
+            <input placeHolder="search" onChange={handleChange} value={txt} name="txt" id="txt" type="text" />
         </div>
     )
 }

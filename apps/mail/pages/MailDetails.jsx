@@ -50,18 +50,19 @@ export function MailDetails() {
             <section className="mail-main-content">
 
                 <header className="mail-header">
-                    
-                    <button onClick={onBack} className="fa-solid fa-arrow-left"></button>
-                        <button><Link className="fa-solid fa-backward"
-                            to={`/mail/${mail.prevMailId}`}></Link></button>
 
-                        <button><Link className="fa-solid fa-forward"
-                            to={`/mail/${mail.nextMailId}`}></Link></button>
+                    <button onClick={onBack} className="fa-solid fa-arrow-left"></button>
+                    <button><Link className="fa-solid fa-backward"
+                        to={`/mail/${mail.prevMailId}`}></Link></button>
+
+                    <button><Link className="fa-solid fa-forward"
+                        to={`/mail/${mail.nextMailId}`}></Link></button>
 
                 </header>
-                
+
 
                 <h1>{mail.subject}</h1>
+                <img className="avatar" src={mail.fromImgUrl} alt="Sender Avatar" />
                 <p><strong>From:</strong> {mail.from}</p>
 
                 <p className="mail-body">{mail.body}</p>

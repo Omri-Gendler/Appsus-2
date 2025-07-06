@@ -53,3 +53,33 @@
     padding-left: 20px;
     margin-top: 25px;
 }
+
+.mail-details-meta {
+    grid-area: meta;
+    display: flex;
+    /* כדי למקם את התמונה והטקסט בשורה */
+    align-items: center;
+    /* מרכוז אנכי */
+    gap: 1em;
+    /* רווח בין התמונה לטקסט */
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* הופך את התמונה לעגולה */
+    background-color: #e0e0e0;
+    /* צבע רקע למקרה שהתמונה לא נטענת */
+}
+
+.sender-info p,
+.sender-info span {
+    margin: 0;
+    padding: 0;
+}
+
+.sender-info span {
+    color: #666;
+    font-size: 0.9em;
+}

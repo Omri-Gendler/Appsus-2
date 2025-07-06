@@ -25,6 +25,12 @@ function query(filterBy = {}) {
                 const regExp = new RegExp(filterBy.txt, 'i')
                 mails = mails.filter(mail => regExp.test(mail.subject))
             }
+            if (filterBy.isRead && filterBy.isRead !== 'all') {
+                mails = mails.filter(mail => {
+                    if (filterBy.isRead === 'read') return mail.isRead
+                    if (filterBy.isRead === 'unread') return !mail.isRead
+                })
+            }
             return mails
         })
 }

@@ -1,0 +1,17 @@
+input {
+    position: relative;
+    font-size: 10px;
+    left: 100px;
+    bottom: 60px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+.filter-section input {
+    border-radius: 5px;
+    width: 100px;
+    height: 20px;
+}

@@ -62,7 +62,7 @@ export function MailIndex({ logo }) {
                 </div>
             </aside>
             <main className="mail-main-content">
-                {<MailFilter onSetFilterBy={onSetFilterBy} filterBy={filterBy} />}
+                {<MailFilter mails={mails} onSetFilterBy={onSetFilterBy} filterBy={filterBy} />}
                 {<MailList mails={mails} logo={logo} onRemoveMail={onRemoveMail} />}
             </main>
         </div>

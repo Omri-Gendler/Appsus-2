@@ -27,9 +27,9 @@ export function MailDetails() {
     }
 
 
-    function onBack() {
-        navigate('/mail')
-    }
+    // function onBack() {
+    //     navigate('/mail')
+    // }
 
     if (isLoading) return <div className="loader">Loading...</div>
     if (!mail) return <div>Mail not found!</div>

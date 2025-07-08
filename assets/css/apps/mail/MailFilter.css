@@ -1,7 +1,7 @@
 .search-input {
-    position: relative;
+    /* position: relative;
     top: -60px;
-    left: 172px;
+    left: 172px; */
     border-radius: 10px;
     text-align: center;
     background-color: #e9eef6;
@@ -18,10 +18,14 @@
     top: -37px;
     left: 18px;
 }
-
+/* 
 .search-icon {
     position: relative;
     z-index: 1;
     top: -54px;
     left: 251px;
+} */
+
+.search-bar-container {
+    display: flex;
 }

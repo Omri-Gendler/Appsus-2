@@ -4,8 +4,7 @@ h1 {
 
 .mail-inbox {
     display: grid;
-    grid-template-columns: 5rem 95rem;
-    height: calc(100vh - 80px);
+    grid-template-columns: 5rem 92.1rem;
     color: #3c4043;
 }
 

@@ -42,6 +42,15 @@ export function MailIndex({ logo }) {
         setFilterBy(prevFilter => ({ ...prevFilter, ...filterByToEdit }))
     }
 
+    function onUnreadBtn(mailToUpdate) {
+        const updatedMail = { ...mailToUpdate, isRead: !mailToUpdate.isRead }
+        const updatedMails = mails.map(mail =>
+            mail.id === updatedMail.id ? updatedMail : mail
+        )
+        mailService.save(updatedMail)
+        setMails(updatedMails)
+    }
+
     if (!mails) return <div className="container">Loading...</div>
     return (
         <div className="mail-inbox">
@@ -63,9 +72,8 @@ export function MailIndex({ logo }) {
             </aside>
             <main className="mail-main-content">
                 {<MailFilter mails={mails} onSetFilterBy={onSetFilterBy} filterBy={filterBy} />}
-                {<MailList mails={mails} logo={logo} onRemoveMail={onRemoveMail} />}
+                {<MailList mails={mails} logo={logo} onRemoveMail={onRemoveMail} onUnreadBtn={onUnreadBtn} />}
             </main>
         </div>
     )
 }
- 

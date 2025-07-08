@@ -2,6 +2,7 @@ import { loadFromStorage, makeId, makeLorem, saveToStorage } from './util.servic
 import { storageService } from './async-storage.service.js'
 
 const MAIL_KEY = 'mailDB'
+
 _createMails()
 
 const loggedinUser = {
@@ -67,7 +68,7 @@ function _createMails() {
         const mails = [{
 
             id: 'e101',
-            createdAt: 1672531200000, // Jan 1, 2023
+            createdAt: new Intl.DateTimeFormat('he-IL').format(1672531200000),
             subject: makeLorem(15),
             body: makeLorem(400),
             isRead: false,
@@ -80,7 +81,7 @@ function _createMails() {
         },
         {
             id: 'e102',
-            createdAt: 1675209600000, // Feb 1, 2023
+            createdAt: new Intl.DateTimeFormat('he-IL').format(1675209600000),
             subject: makeLorem(15),
             body: makeLorem(400),
             isRead: true,
@@ -93,7 +94,7 @@ function _createMails() {
         },
         {
             id: 'e103',
-            createdAt: 1677628800000, // Mar 1, 2023
+            createdAt: new Intl.DateTimeFormat('he-IL').format(1677628800000),
             subject: makeLorem(15),
             body: makeLorem(400),
             isRead: false,
@@ -106,7 +107,7 @@ function _createMails() {
         },
         {
             id: 'e104',
-            createdAt: 1680307200000, // Apr 1, 2023
+            createdAt: new Intl.DateTimeFormat('he-IL').format(1680307200000),
             subject: makeLorem(15),
             body: makeLorem(400),
             isRead: false,
@@ -119,7 +120,7 @@ function _createMails() {
         },
         {
             id: 'e105',
-            createdAt: 1682899200000, // May 1, 2023
+            createdAt: new Intl.DateTimeFormat('he-IL').format(1682899200000),
             subject: makeLorem(15),
             body: makeLorem(400),
             isRead: true,
@@ -132,7 +133,7 @@ function _createMails() {
         },
         {
             id: 'e106',
-            createdAt: 1685577600000, // Jun 1, 2023
+            createdAt: new Intl.DateTimeFormat('he-IL').format(1685577600000),
             subject: makeLorem(15),
             body: makeLorem(400),
             isRead: false,
@@ -145,7 +146,7 @@ function _createMails() {
         },
         {
             id: 'e107',
-            createdAt: 1688169600000, // Jul 1, 2023
+            createdAt: new Intl.DateTimeFormat('he-IL').format(1688169600000),
             subject: makeLorem(15),
             body: makeLorem(400),
             isRead: true,
@@ -158,7 +159,7 @@ function _createMails() {
         },
         {
             id: 'e108',
-            createdAt: 1690848000000, // Aug 1, 2023
+            createdAt: new Intl.DateTimeFormat('he-IL').format(1690848000000),
             subject: makeLorem(15),
             body: makeLorem(400),
             isRead: false,
@@ -171,7 +172,7 @@ function _createMails() {
         },
         {
             id: 'e109',
-            createdAt: 1693526400000, // Sep 1, 2023
+            createdAt: new Intl.DateTimeFormat('he-IL').format(1693526400000),
             subject: makeLorem(15),
             body: makeLorem(400),
             isRead: false,
@@ -184,7 +185,7 @@ function _createMails() {
         },
         {
             id: 'e110',
-            createdAt: 1696118400000, // Oct 1, 2023
+            createdAt: new Intl.DateTimeFormat('he-IL').format(1696118400000),
             subject: makeLorem(15),
             body: makeLorem(400),
             isRead: true,

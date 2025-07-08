@@ -17,3 +17,7 @@
 @import './apps/mail/MailPreview.css';
 @import './apps/mail/MailDetails.css';
 @import './apps/mail/MailFilter.css';
+
+/* * {
+  outline: 1px solid red;
+} */

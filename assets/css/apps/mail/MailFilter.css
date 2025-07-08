@@ -12,20 +12,24 @@
 }
 
 .filter-isRead {
-    position: relative;
-    width: 10px;
-    height: 12px;
-    top: -37px;
-    left: 18px;
+    width: 12px;
+    height: 20px;
 }
-/* 
+
 .search-icon {
-    position: relative;
-    z-index: 1;
-    top: -54px;
-    left: 251px;
-} */
+    position: absolute;
+    left: 31rem;
+    top: 0.5rem;
+}
 
 .search-bar-container {
     display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.isread-filter {
+    display: flex;
+    max-width: 5rem;
+    border: none;
 }

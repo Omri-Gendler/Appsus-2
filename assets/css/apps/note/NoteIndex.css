@@ -11,3 +11,71 @@
     --gray2: #888;
     --gray2: #333;
 }
+
+.add-note-container{
+    position:relative;
+    width: 60%;
+    margin: 32px auto 50px auto;
+    background: #fff;
+    padding: 7px;
+    border-radius: 7px;
+    box-shadow: 0 1px 7px rgb(128, 128, 128);
+}
+
+.add-note-container input{
+    width: 90%;
+    padding: 4px 8px;
+    margin-bottom: 20px;
+    position: relative;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    resize: none;
+}
+
+.add-note-container textarea{
+    width: 90%;
+    border: none;
+    padding: 4px 8px;
+    font-size: 1rem;
+    outline: none;
+    resize: none;
+}
+
+.add-note-container .submit-btn{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 90%;
+    bottom: -30px;
+    background: rgb(248, 199, 2);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgb(163, 163, 163);
+    cursor: pointer;
+    outline: none;
+}
+
+.delete-button{
+    position:relative;
+    float: right;
+    color: orange;
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+}
+
+/* .backdrop{
+   position:sticky;
+   
+   display: block;
+    color: rgb(9, 54, 39);
+    z-index: 2;
+    margin: 0;
+    width: 1000px;
+    height: 1000px;
+} */

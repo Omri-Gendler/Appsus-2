@@ -1,19 +1,27 @@
-.mail-filter-container input {
+.search-input {
     position: relative;
-    font-size: 10px;
-    left: 100px;
-    bottom: 60px;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    border: 1px solid gray;
+    top: -60px;
+    left: 172px;
+    border-radius: 10px;
     text-align: center;
+    background-color: #e9eef6;
+    border: none;
+    height: 2.5rem;
+    width: 30rem;
+    border-radius: 22px;
 }
 
-.filter-section input {
-    width: 5px;
-    height: 8px;
+.filter-isRead {
     position: relative;
-    left: 23px;
+    width: 10px;
+    height: 12px;
+    top: -37px;
+    left: 18px;
+}
+
+.search-icon {
+    position: relative;
+    z-index: 1;
     top: -54px;
+    left: 251px;
 }

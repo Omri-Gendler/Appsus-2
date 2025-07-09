@@ -1,11 +1,31 @@
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 h1 {
     text-align: center;
 }
 
+.mail {
+    display: grid;
+    grid-template-columns: 20px 150px minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #dadce0;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box; 
+    overflow: hidden;
+}
+
 .mail-inbox {
     display: grid;
-    grid-template-columns: 5rem 92.1rem;
+    grid-template-columns: auto 1fr;
     color: #3c4043;
+    overflow: hidden;
 }
 
 .mail-main-content {

@@ -41,24 +41,34 @@
 
 
 .color-modal-container {
-  position: relative;
-  display: inline-block;
+  position: absolute;
+  bottom: 0px; /* Appears just below the note */
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  z-index: 1000;
 }
 
 .color-modal {
-  position: absolute;
-  top: 120%; /* Adjust if needed */
-  left: 0;
   display: flex;
   gap: 0.5em;
-  padding: 0.75em;
+  padding: 0.5em;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-  z-index: 2000;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   transition: opacity 0.2s ease;
 }
+
+
+.color-modal-container.show {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
 
 .circle {
   width: 28px;

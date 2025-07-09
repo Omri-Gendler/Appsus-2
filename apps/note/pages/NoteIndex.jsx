@@ -13,11 +13,12 @@ export function NoteIndex({ logo }) {
     const [notes, setNotes] = useState(null)
     const [showModal, setShowModal] = useState(false)
     
+    
     useEffect(() => {
         noteService.query().then(setNotes)
     }, [])
     
-    
+   const pinnedNotes = notes ? noteService.createPinnedList(notes) : []
     
     function onRemoveNote(noteId) {
         noteService.remove(noteId)
@@ -40,6 +41,8 @@ function onUpdateNote(updatedNote) {
     )
   })
 }
+
+
 
 
 
@@ -81,7 +84,7 @@ return  <div className="notes-container">
                 <main className="notes-main-content">
                     <AddNote onAddNote={onAddNote} />
                     
-                    <NoteList notes={notes} logo={logo} onRemoveNote={onRemoveNote} onUpdateNote={onUpdateNote} />
+                    <NoteList notes={notes} pinnedNotes={pinnedNotes} logo={logo} onRemoveNote={onRemoveNote} onUpdateNote={onUpdateNote} />
                 </main>
             </div>
 

@@ -1,14 +1,22 @@
 
-const { useState, useRef } = React
+const { useState, useRef ,useEffect,} = React
 import { makeId } from "../services/util.service.js"
+import { NoteActions } from "./NoteActions.jsx"
 
 
 export function AddNote({onAddNote}){
     const [isExpanded, setIsExpanded] = useState(false)
     const [title, setNoteTitle] = useState('')
     const [txt, setNoteTxt] = useState('')
-    const [isHover, setIsHover] = useState(false)
-    const containerRef = useRef(null)
+    const [color, setColor] = useState('#fff') // default note bg color
+
+    
+    const containerRef = useRef()
+    const titleInputRef = useRef()
+
+    function handlePickColor(pickedColor) {
+      setColor(pickedColor)
+    }
 
     function expandNote() {
         setIsExpanded(true)
@@ -24,30 +32,43 @@ export function AddNote({onAddNote}){
             type: 'NoteTxt',
             isPinned: false, 
             style: {
-                backgroundColor: '#fff' 
+                backgroundColor: color,
             },
             info: {
                 title, 
                 txt    
             }
-}
+          }
 
         onAddNote(newNote)
     }
     setIsExpanded(false)
     setNoteTitle('')
     setNoteTxt('')
+    setColor('#fff')
 
    }
 
-   return(
 
-         <form
+     useEffect(() => {
+    if (isExpanded && titleInputRef.current) {
+      titleInputRef.current.focus()
+    }
+  }, [isExpanded])
+
+  function onEdit() {}
+  function onPin() {}
+  function onDelete() {}
+
+  return (
+    <form
       ref={containerRef}
       className="add-note-container"
       onClick={expandNote}
+      onSubmit={onSubmit}
+      style={{ backgroundColor: color }}
     >
-        {!isExpanded && (
+      {!isExpanded && (
         <input
           type="text"
           placeholder="Take a note..."
@@ -55,27 +76,36 @@ export function AddNote({onAddNote}){
           readOnly
         />
       )}
-            {isExpanded && (<form className="note-expanded">
+
+      {isExpanded && (
+        <div className="note-expanded"> 
           <input
+          ref={titleInputRef}
             type="text"
             placeholder="Title"
             className="note-title"
             value={title}
             onChange={(ev) => setNoteTitle(ev.target.value)}
+            style={{ backgroundColor: color }}
           />
           <textarea
             placeholder="Take a note..."
             className="note-txt"
             value={txt}
             onChange={(ev) => setNoteTxt(ev.target.value)}
+            style={{ backgroundColor: color }}
           />
-          <div className="note-actions">
-            <button className="submit-btn" onClick={onSubmit}>+</button>
-          </div>
-        </form>
-            )}
-        </form>
-   )
+         <NoteActions
+            onEdit={onEdit}
+            onPin={onPin}
+            onDelete={onDelete}
+            onColor={handlePickColor}
+            isInForm={true}
+          />
+        </div>
+      )}
+    </form>
+  )
 
     
 }

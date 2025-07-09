@@ -16,6 +16,7 @@
   background-color: #fff;
   width: 90%;
   min-width: 240px;
+  max-width: 400px;
   height: fit-content;
   display: inline-block;
   
@@ -23,6 +24,7 @@
   border: 1px solid rgb(210, 208, 208);
   padding: 10px;
   margin: 16px;
+  padding-bottom: 40px;
   /* float: left; */
   /* float: right; */
   transition: box-shadow 0.2s ease;

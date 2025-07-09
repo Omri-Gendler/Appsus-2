@@ -1,6 +1,6 @@
 import { NotePreview } from "./NotePreview.jsx"
 
-export function NoteList({ notes, onRemoveNote }) {
+export function NoteList({ notes, onRemoveNote , onUpdateNote}) {
 
     if (!notes || notes.length === 0) {
         return <div className="no-notes">No notes to show</div>
@@ -13,6 +13,7 @@ export function NoteList({ notes, onRemoveNote }) {
                         key={note.id}
                         note={note}
                         onRemoveNote={onRemoveNote}
+                        onUpdateNote={onUpdateNote}
                     />
                 ))}
                 {console.log(notes)}

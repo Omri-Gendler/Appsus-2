@@ -33,6 +33,15 @@ export function NoteIndex({ logo }) {
     })
 }
 
+function onUpdateNote(updatedNote) {
+  noteService.save(updatedNote).then(savedNote => {
+    setNotes(prevNotes =>
+      prevNotes.map(note => (note.id === savedNote.id ? savedNote : note))
+    )
+  })
+}
+
+
 
 function onAddNote(noteToSave) {
     noteService.add(noteToSave)
@@ -72,7 +81,7 @@ return  <div className="notes-container">
                 <main className="notes-main-content">
                     <AddNote onAddNote={onAddNote} />
                     
-                    <NoteList notes={notes} logo={logo} onRemoveNote={onRemoveNote} />
+                    <NoteList notes={notes} logo={logo} onRemoveNote={onRemoveNote} onUpdateNote={onUpdateNote} />
                 </main>
             </div>
 

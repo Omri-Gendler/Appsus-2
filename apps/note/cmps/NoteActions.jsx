@@ -14,9 +14,11 @@ export function NoteActions({ onDuplicate, onPinned, onDelete, onColor, isInForm
   
 }
 function toggleColorPicker(ev) {
-  ev.stopPropagation();
-  setShowColorPicker(prev => !prev);
+  ev.stopPropagation()
+  console.log("Clicked paint button")
+  setShowColorPicker(prev => !prev)
 }
+
 
 
 

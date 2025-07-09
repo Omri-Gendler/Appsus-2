@@ -46,6 +46,7 @@ export function NotePreview({ note, onRemoveNote, onUpdateNote }) {
     <div className={`note`} style={{ backgroundColor: note.style.backgroundColor || "#fff" }}>
       <h1>{note.info.title}</h1>
       <p>{note.info.txt}</p>
+      
 
  <NoteActions
         onPinned={onPinned}

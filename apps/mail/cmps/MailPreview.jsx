@@ -13,7 +13,6 @@ export function MailPreview({ mail, onRemoveMail, onUnreadBtn }) {
 
     return (
         <div className={`mail ${readClass}`} onClick={handleNavigate}>
-            {/* <LongTxt txt={mail.subject} /> */}
             <div className="mail-status">
                 {!mail.isRead && <span className="unread-dot">●</span>}
             </div>

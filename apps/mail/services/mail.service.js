@@ -63,13 +63,14 @@ function getDefaultFilter() {
 
 function _createMails() {
     let mails = loadFromStorage(MAIL_KEY)
+    const subject = makeLorem(50)
     if (!mails || !mails.length) {
 
         const mails = [{
 
             id: 'e101',
             createdAt: new Intl.DateTimeFormat('he-IL').format(1672531200000),
-            subject: makeLorem(15),
+            subject: _longSubject(subject),
             body: makeLorem(400),
             isRead: false,
             sentAt: 1672531205000,
@@ -82,7 +83,7 @@ function _createMails() {
         {
             id: 'e102',
             createdAt: new Intl.DateTimeFormat('he-IL').format(1675209600000),
-            subject: makeLorem(15),
+            subject: _longSubject(subject),
             body: makeLorem(400),
             isRead: true,
             sentAt: 1675209605000,
@@ -95,7 +96,7 @@ function _createMails() {
         {
             id: 'e103',
             createdAt: new Intl.DateTimeFormat('he-IL').format(1677628800000),
-            subject: makeLorem(15),
+            subject: _longSubject(subject),
             body: makeLorem(400),
             isRead: false,
             sentAt: 1677628805000,
@@ -108,7 +109,7 @@ function _createMails() {
         {
             id: 'e104',
             createdAt: new Intl.DateTimeFormat('he-IL').format(1680307200000),
-            subject: makeLorem(15),
+            subject: _longSubject(subject),
             body: makeLorem(400),
             isRead: false,
             sentAt: 1680307205000,
@@ -121,7 +122,7 @@ function _createMails() {
         {
             id: 'e105',
             createdAt: new Intl.DateTimeFormat('he-IL').format(1682899200000),
-            subject: makeLorem(15),
+            subject: _longSubject(subject),
             body: makeLorem(400),
             isRead: true,
             sentAt: 1682899205000,
@@ -134,7 +135,7 @@ function _createMails() {
         {
             id: 'e106',
             createdAt: new Intl.DateTimeFormat('he-IL').format(1685577600000),
-            subject: makeLorem(15),
+            subject: _longSubject(subject),
             body: makeLorem(400),
             isRead: false,
             sentAt: 1685577605000,
@@ -147,7 +148,7 @@ function _createMails() {
         {
             id: 'e107',
             createdAt: new Intl.DateTimeFormat('he-IL').format(1688169600000),
-            subject: makeLorem(15),
+            subject: _longSubject(subject),
             body: makeLorem(400),
             isRead: true,
             sentAt: 1688169605000,
@@ -160,7 +161,7 @@ function _createMails() {
         {
             id: 'e108',
             createdAt: new Intl.DateTimeFormat('he-IL').format(1690848000000),
-            subject: makeLorem(15),
+            subject: _longSubject(subject),
             body: makeLorem(400),
             isRead: false,
             sentAt: 1690848005000,
@@ -173,7 +174,7 @@ function _createMails() {
         {
             id: 'e109',
             createdAt: new Intl.DateTimeFormat('he-IL').format(1693526400000),
-            subject: makeLorem(15),
+            subject: _longSubject(subject),
             body: makeLorem(400),
             isRead: false,
             sentAt: 1693526405000,
@@ -183,19 +184,6 @@ function _createMails() {
             fromImgUrl: '../img/unnamed.png',
             starred: false
         },
-        {
-            id: 'e110',
-            createdAt: new Intl.DateTimeFormat('he-IL').format(1696118400000),
-            subject: makeLorem(15),
-            body: makeLorem(400),
-            isRead: true,
-            sentAt: 1696118405000,
-            removedAt: null,
-            from: 'welcome@service.com',
-            to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png',
-            starred: true
-        }
         ]
         saveToStorage(MAIL_KEY, mails)
     }
@@ -218,3 +206,12 @@ function _setNextPrevMailId(mail) {
     })
 }
 
+function _longSubject(subject, maxWords = 20) {
+    if (!subject) return ''
+    const words = subject.split(' ')
+    if (words.length > maxWords) {
+        const truncatedWords = words.slice(0, maxWords)
+        return truncatedWords.join(' ') + '...'
+    }
+    return subject
+}

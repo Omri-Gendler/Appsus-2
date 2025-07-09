@@ -1,7 +1,7 @@
 const { useState, useEffect, useRef } = React
 
-export function LongTxt({ children, length = 100 }) {
-    const txt = children
+export function LongTxt({ txt, length = 10 }) {
+    // const txt = children
     const [isShowFullTxt, setIsShowFullTxt] = useState(false)
 
     function onToggleIsShowFullTxt() {

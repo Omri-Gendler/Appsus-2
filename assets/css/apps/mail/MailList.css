@@ -1,3 +1,7 @@
+.mail-list-container {
+    overflow-y: auto;
+}
+
 .read {
     background-color: #f2f6fc;
 }

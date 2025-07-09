@@ -6,7 +6,7 @@ export function MailList({ mails, onRemoveMail, onUnreadBtn }) {
         return <div className="no-emails">No emails to show</div>
     }
     return (
-        <div>
+        <div className="mail-list-container">
             <ul className="mail-list">
                 {mails.map(mail => (
                     < MailPreview

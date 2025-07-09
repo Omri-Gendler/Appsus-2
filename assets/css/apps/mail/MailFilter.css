@@ -15,28 +15,13 @@
 
 .search-bar-container {
   display: flex;
-  justify-content: center;
   position: absolute;
+  bottom: 36rem;
   z-index: 1;
 }
 
 .isread-filter {
-  position: relative;
-  max-width: 5rem;
-  border: none;
-  top: -1.5rem;
-  left: -34rem;
-}
-
-.search-container svg {
-  position: relative;
-  left: 3.5rem;
-  top: 0.5rem;
-}
-
-
-.search-bar {
-  position: relative;
-  bottom: 5.4rem;
-  left: 6rem;
+  position: absolute;
+  top: 4rem;
+  right: 28.9rem;
 }

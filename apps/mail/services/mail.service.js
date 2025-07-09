@@ -206,7 +206,7 @@ function _setNextPrevMailId(mail) {
     })
 }
 
-function _longSubject(subject, maxWords = 20) {
+function _longSubject(subject, maxWords = 40) {
     if (!subject) return ''
     const words = subject.split(' ')
     if (words.length > maxWords) {

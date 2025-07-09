@@ -42,20 +42,20 @@ export function MailFilter({ filterBy, onSetFilterBy, mails }) {
                     placeHolder="Search"
                     onChange={handleChange}
                 />
+
+                <select className="isread-filter"
+
+                    name="isRead"
+                    onChange={handleChange}
+                    defaultValue="all"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="M480-240 240-480l56-56 144 144v-368h80v368l144-144 56 56-240 240Z" /></svg>
+
+                    <option value="all">All</option>
+                    <option value="read">Read</option>
+                    <option value="unread">Unread</option>
+                </select>
             </div>
-
-            <select className="isread-filter"
-
-                name="isRead"
-                onChange={handleChange}
-                defaultValue="all"
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="M480-240 240-480l56-56 144 144v-368h80v368l144-144 56 56-240 240Z" /></svg>
-
-                <option value="all">All</option>
-                <option value="read">Read</option>
-                <option value="unread">Unread</option>
-            </select>
         </section>
     )
 }

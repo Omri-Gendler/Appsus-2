@@ -30,6 +30,8 @@
 
 .isread-filter {
     display: flex;
+    position: absolute;
     max-width: 5rem;
     border: none;
+    left: 0rem;
 }

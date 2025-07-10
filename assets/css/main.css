@@ -1,6 +1,5 @@
 @import './basics/vars.css';
 @import './basics/base.css';
-@import './basics/mq.css';
 @import './basics/helpers.css';
 @import './basics/layout.css';
 
@@ -18,3 +17,4 @@
 @import './apps/mail/MailDetails.css';
 @import './apps/mail/MailFilter.css';
 
+@import './basics/mq.css';

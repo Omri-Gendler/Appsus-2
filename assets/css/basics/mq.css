@@ -1,3 +1,10 @@
+@media (max-width: 840px) {
+    /* Shorten the search bar */
+    .search-input {
+        width: 15rem;
+    }
+}
+
 @media (max-width: 600px) {
     h1 {
         font-size: 1.2em;

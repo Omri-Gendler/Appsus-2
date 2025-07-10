@@ -5,10 +5,12 @@
 
 .read {
     background-color: #f2f6fc;
+    padding: 0;
 }
 
 .mail.unread {
     font-weight: bold;
+    padding: 0;
 }
 
 .mail-unread:hover {

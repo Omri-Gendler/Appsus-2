@@ -12,10 +12,12 @@
 
 .mail:hover .delete-btn {
     display: block;
+    margin: 0;
 }
 
 .mail:hover .unread-btn {
     display: block;
+    margin: 0;
 }
 
 .mail:hover .mail-created {
@@ -24,7 +26,6 @@
 
 .unread-dot {
     color: #0b57d0;
-    font-size: 12px;
     margin-right: 10px;
 }
 

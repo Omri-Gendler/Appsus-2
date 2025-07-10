@@ -59,6 +59,10 @@
   transition: opacity 0.2s ease;
 }
 
+.color-modal:focus{
+  display: block;
+}
+
 
 .color-modal-container.show {
   animation: fadeIn 0.2s ease;
@@ -81,4 +85,8 @@
 
 .circle:hover {
   border-color: #555;
+}
+
+.open{
+  display: block;
 }

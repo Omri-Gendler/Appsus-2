@@ -14,8 +14,9 @@ export function AddNote({onAddNote}){
     const containerRef = useRef()
     const titleInputRef = useRef()
 
-    function handlePickColor(pickedColor) {
-      setColor(pickedColor)
+    function handlePickColor(color) {
+      setColor(color)
+      console.log(color)
     }
 
     function expandNote() {
@@ -74,6 +75,7 @@ export function AddNote({onAddNote}){
           placeholder="Take a note..."
           className="note-input collapsed"
           readOnly
+          style={{backgroundColor: color}}
         />
       )}
 
@@ -100,6 +102,8 @@ export function AddNote({onAddNote}){
             onPin={onPin}
             onDelete={onDelete}
             onColor={handlePickColor}
+            color={color}
+            setColor={setColor}
             isInForm={true}
           />
         </div>

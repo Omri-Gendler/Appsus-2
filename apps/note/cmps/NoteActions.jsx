@@ -1,26 +1,30 @@
-const {useState} = React
-import { ColorPick } from "./ColorPick.jsx";
+const {useState,useEffect} = React
+import { ColorPick } from "./ColorPick.jsx"
 
-export function NoteActions({ onDuplicate, onPin, onDelete, onColor, isInForm }) {
-  const [showColorPicker, setShowColorPicker] = useState(false);
-  const [isPinned, setIsPinned] = useState(false)
-
-  function toggleColorPicker(ev) {
-    ev.stopPropagation();
-    setShowColorPicker(prev => !prev);
-  }
-
-   function toggleIsPinned(ev) {
-    ev.stopPropagation();
-    setIsPinned(prev => !prev);
-  }
-
-  function handlePickColor(color) {
-    onColor(color);           // Notify parent of new color
-    setShowColorPicker(false); // Close modal after picking
-  }
+export function NoteActions({ onDuplicate, onPinned, onDelete, onColor, isInForm ,isPinned}) {
+  const [showColorPicker, setShowColorPicker] = useState(false)
+  
 
  
+
+  function toggleIsPinned(ev) {
+  ev.stopPropagation()
+  
+  onPinned(!isPinned)
+  
+}
+function toggleColorPicker(ev) {
+  ev.stopPropagation()
+  console.log("Clicked paint button")
+  setShowColorPicker(prev => !prev)
+}
+
+
+
+
+  function handlePickColor(color) {
+    onColor(color)          
+  }
 
   return (
     <div className="note-actions">
@@ -29,7 +33,7 @@ export function NoteActions({ onDuplicate, onPin, onDelete, onColor, isInForm })
       </button>
 
       {showColorPicker && (
-        <div className="color-modal-container">
+        <div className="color-modal-container open">
           <ColorPick onPickColor={handlePickColor} onClose={() => setShowColorPicker(false)} />
         </div>
       )}
@@ -37,15 +41,16 @@ export function NoteActions({ onDuplicate, onPin, onDelete, onColor, isInForm })
       {!isInForm && <button onClick={onDuplicate}>
         <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#434343"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/></svg>
       </button>}
+
+      <button onClick={toggleIsPinned} className="pin-btn">
       {!isPinned ? (
-          <button onClick={toggleIsPinned} className="color-btn">
             <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#434343"><path d="m624-480 96 96v72H516v228l-36 36-36-36v-228H240v-72l96-96v-264h-48v-72h384v72h-48v264Zm-282 96h276l-66-66v-294H408v294l-66 66Zm138 0Z"/></svg>
-          </button>
+          
         ) : (
-          <button onClick={toggleIsPinned}>
             <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#434343"><path d="m624-480 96 96v72H516v228l-36 36-36-36v-228H240v-72l96-96v-264h-48v-72h384v72h-48v264Z"/></svg> 
-          </button>
-        )}
+          )}
+      </button>
+        
       {isInForm && <button type="submit" className="submit-btn">Close</button>}
       {!isInForm && <button onClick={onDelete}>
         <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#434343"><path d="M312-144q-29.7 0-50.85-21.15Q240-186.3 240-216v-480h-48v-72h192v-48h192v48h192v72h-48v479.57Q720-186 698.85-165T648-144H312Zm336-552H312v480h336v-480ZM384-288h72v-336h-72v336Zm120 0h72v-336h-72v336ZM312-696v480-480Z"/></svg></button>}

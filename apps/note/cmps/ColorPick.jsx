@@ -36,7 +36,12 @@ export function ColorPick({ onPickColor, onClose }) {
           key={color}
           className="color-btn circle"
           style={{ backgroundColor: color }}
-          onClick={() => onPickColor(color)}
+          onClick={() => {
+          console.log("Color picked", color)
+          onPickColor(color)
+          onClose()
+          }}
+
         />
       ))}
     </div>

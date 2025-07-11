@@ -1,6 +1,7 @@
 .mail-list-container {
     height: 100vh;
     overflow-y: auto;
+    margin-top: 3rem;
 }
 
 .read {

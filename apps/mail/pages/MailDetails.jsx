@@ -61,10 +61,12 @@ export function MailDetails() {
                 </header>
 
 
-                <h1>{mail.subject}</h1>
-                <img className="avatar" src={mail.fromImgUrl} alt="Sender Avatar" />
-                <p><strong>From:</strong> {mail.from}</p>
+                <div className="header-mail-details">
+                    <h1>{mail.subject}</h1>
+                    <img className="avatar" src={mail.fromImgUrl} alt="Sender Avatar" />
+                    <p><strong>From:</strong> {mail.from}</p>
 
+                </div>
                 <p className="mail-body">{mail.body}</p>
 
             </section>

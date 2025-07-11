@@ -16,6 +16,7 @@
 .search-bar-container {
   display: flex;
   position: absolute;
+  left: 19rem;
   bottom: 36rem;
   z-index: 1;
 }
@@ -23,5 +24,11 @@
 .isread-filter {
   position: absolute;
   top: 4rem;
-  right: 28.9rem;
+  right: 42rem;
+}
+
+.search-icon {
+  position: relative;
+  left: 3.2rem;
+  top: 0.5rem;
 }

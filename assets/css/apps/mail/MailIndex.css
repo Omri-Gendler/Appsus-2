@@ -17,13 +17,14 @@ h1 {
     border-bottom: 1px solid #dadce0;
     cursor: pointer;
     width: 100%;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     overflow: hidden;
 }
 
 .mail-inbox {
     display: grid;
-    grid-template-columns: auto 1fr;
+    /* grid-template-columns: auto 1fr; */
+    grid-template-columns: auto 74rem;
     color: #3c4043;
     overflow: hidden;
 }

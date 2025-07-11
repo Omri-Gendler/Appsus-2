@@ -1,3 +1,7 @@
+h1 {
+    display: none;
+}
+
 .mail {
     display: flex;
     align-items: center;

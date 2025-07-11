@@ -1,3 +1,9 @@
+.mail-header-details {
+    display: flex;
+    margin-left: 0.5rem;
+    gap: 1rem;
+}
+
 .mail-details-container {
     display: grid;
     grid-template-columns: 0.1fr 1fr;
@@ -10,17 +16,16 @@
 
 .mail-main-content {
     border-radius: 10px;
-    padding: 2rem;
+    overflow-y: auto;
+    margin-right: 5rem;
+    /* padding: 2rem; */
 }
 
 .mail-body {
-    line-height: 150%;
-    font-weight: 400;
-    padding-left: 42px;
-    padding-right: 42px;
-    padding: 5rem;
+    padding-left: 0.5rem;
+    /* padding: 5rem; */
     background-color: #ffffff;
-    margin-top: 80px;
+    /* margin-top: 80px; */
 }
 
 .mail-details-container button {
@@ -49,7 +54,7 @@
 }
 
 .mail-main-content p {
-    padding-right: 1rem;
+    /* padding-right: 1rem; */
 }
 
 .mail-details-meta {

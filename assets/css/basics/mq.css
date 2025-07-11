@@ -1,9 +1,13 @@
 @media (max-width: 840px) {
 
-
-    /* Shorten the search bar */
     .search-input {
         width: 15rem;
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 1.5rem;
+        top: 0.5rem;
     }
 }
 
@@ -38,13 +42,7 @@
 
     .mail-list-container {
         height: 100vh;
-        margin-top: 2rem;
-        overflow-y: auto;
-    }
-
-    .mail-list-container {
-        height: 100vh;
-        margin-top: 2rem;
+        margin-top: 5rem;
         overflow-y: auto;
     }
 
@@ -88,7 +86,6 @@
         left: 3.5rem;
         top: 0.5rem;
     }
-}
 
     .search-bar-container {
         display: flex;
@@ -102,3 +99,8 @@
         left: 3.5rem;
         top: 0.5rem;
     }
+
+    .isread-filter {
+        display: none;
+    }
+}

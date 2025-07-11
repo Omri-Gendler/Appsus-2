@@ -66,125 +66,248 @@ function _createMails() {
     const subject = makeLorem(50)
     if (!mails || !mails.length) {
 
-        const mails = [{
+        const mails = [
 
-            id: 'e101',
-            createdAt: new Intl.DateTimeFormat('he-IL').format(1672531200000),
-            subject: _longSubject(subject),
-            body: makeLorem(400),
-            isRead: false,
-            sentAt: 1672531205000,
-            removedAt: null,
-            from: 'momo@momo.com',
-            to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png',
-            starred: false
-        },
-        {
-            id: 'e102',
-            createdAt: new Intl.DateTimeFormat('he-IL').format(1675209600000),
-            subject: _longSubject(subject),
-            body: makeLorem(400),
-            isRead: true,
-            sentAt: 1675209605000,
-            removedAt: null,
-            from: 'sara@work.com',
-            to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png',
-            starred: false
-        },
-        {
-            id: 'e103',
-            createdAt: new Intl.DateTimeFormat('he-IL').format(1677628800000),
-            subject: _longSubject(subject),
-            body: makeLorem(400),
-            isRead: false,
-            sentAt: 1677628805000,
-            removedAt: null,
-            from: 'david@friends.com',
-            to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png',
-            starred: false
-        },
-        {
-            id: 'e104',
-            createdAt: new Intl.DateTimeFormat('he-IL').format(1680307200000),
-            subject: _longSubject(subject),
-            body: makeLorem(400),
-            isRead: false,
-            sentAt: 1680307205000,
-            removedAt: null,
-            from: 'store@shop.com',
-            to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png',
-            starred: false
-        },
-        {
-            id: 'e105',
-            createdAt: new Intl.DateTimeFormat('he-IL').format(1682899200000),
-            subject: _longSubject(subject),
-            body: makeLorem(400),
-            isRead: true,
-            sentAt: 1682899205000,
-            removedAt: null,
-            from: 'boss@company.com',
-            to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png',
-            starred: false
-        },
-        {
-            id: 'e106',
-            createdAt: new Intl.DateTimeFormat('he-IL').format(1685577600000),
-            subject: _longSubject(subject),
-            body: makeLorem(400),
-            isRead: false,
-            sentAt: 1685577605000,
-            removedAt: null,
-            from: 'newsletter@news.com',
-            to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png',
-            starred: false
-        },
-        {
-            id: 'e107',
-            createdAt: new Intl.DateTimeFormat('he-IL').format(1688169600000),
-            subject: _longSubject(subject),
-            body: makeLorem(400),
-            isRead: true,
-            sentAt: 1688169605000,
-            removedAt: null,
-            from: 'airline@flights.com',
-            to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png',
-            starred: false
-        },
-        {
-            id: 'e108',
-            createdAt: new Intl.DateTimeFormat('he-IL').format(1690848000000),
-            subject: _longSubject(subject),
-            body: makeLorem(400),
-            isRead: false,
-            sentAt: 1690848005000,
-            removedAt: null,
-            from: 'support@service.com',
-            to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png',
-            starred: true
-        },
-        {
-            id: 'e109',
-            createdAt: new Intl.DateTimeFormat('he-IL').format(1693526400000),
-            subject: _longSubject(subject),
-            body: makeLorem(400),
-            isRead: false,
-            sentAt: 1693526405000,
-            removedAt: null,
-            from: 'hr@company.com',
-            to: 'user@appsus.com',
-            fromImgUrl: '../img/unnamed.png',
-            starred: false
-        },
-        ]
+            {
+                id: 'e102',
+                createdAt: formatDateToMonthDay(1651133930500),
+                subject: 'Project Update',
+                body: 'The project is on track for completion next week.',
+                isRead: false,
+                sentAt: 1651133930594,
+                removedAt: null,
+                from: 'alice@work.com',
+                to: 'user@appsus.com',
+                fromImgUrl: './img/unnamed.png',
+            },
+            {
+                id: 'e103',
+                createdAt: formatDateToMonthDay(1651133930500),
+                subject: 'Invitation',
+                body: 'You are invited to our annual meetup.',
+                isRead: true,
+                sentAt: 1621133930594,
+                removedAt: null,
+                from: 'events@community.org',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e104',
+                createdAt: formatDateToMonthDay(1631133930500),
+                subject: 'Invoice Attached',
+                body: 'Please find the invoice attached for your reference.',
+                isRead: false,
+                sentAt: 1631133930594,
+                removedAt: null,
+                from: 'billing@services.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e105',
+                createdAt: formatDateToMonthDay(1641133930500),
+                subject: 'Happy Birthday!',
+                body: 'Wishing you a wonderful birthday!',
+                isRead: true,
+                sentAt: 1641133930594,
+                removedAt: null,
+                from: 'friends@social.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e106',
+                createdAt: formatDateToMonthDay(1661133930500),
+                subject: 'Newsletter June',
+                body: 'Check out our latest updates in the June newsletter.',
+                isRead: false,
+                sentAt: 1661133930594,
+                removedAt: null,
+                from: 'newsletter@updates.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e107',
+                createdAt: formatDateToMonthDay(1671133930500),
+                subject: 'Appointment Confirmation',
+                body: 'Your appointment is confirmed for July 15th.',
+                isRead: true,
+                sentAt: 1671133930594,
+                removedAt: null,
+                from: 'appointments@clinic.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e108',
+                createdAt: formatDateToMonthDay(1681133930500),
+                subject: 'Password Reset',
+                body: 'Click the link below to reset your password.',
+                isRead: false,
+                sentAt: 1681133930594,
+                removedAt: null,
+                from: 'security@webapp.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e109',
+                createdAt: formatDateToMonthDay(1691133930500),
+                subject: 'Welcome!',
+                body: 'Welcome to our platform. We are glad to have you.',
+                isRead: true,
+                sentAt: 1691133930594,
+                removedAt: null,
+                from: 'support@platform.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e110',
+                createdAt: formatDateToMonthDay(1701133930500),
+                subject: 'Order Shipped',
+                body: 'Your order has been shipped and is on its way.',
+                isRead: false,
+                sentAt: 1701133930594,
+                removedAt: null,
+                from: 'orders@shop.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e111',
+                createdAt: formatDateToMonthDay(1711133930500),
+                subject: 'Feedback Request',
+                body: 'Please share your feedback about our service.',
+                isRead: true,
+                sentAt: 1711133930594,
+                removedAt: null,
+                from: 'feedback@service.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e112',
+                createdAt: formatDateToMonthDay(1721133930500),
+                subject: 'Travel Itinerary',
+                body: 'Your travel itinerary is attached.',
+                isRead: false,
+                sentAt: 1721133930594,
+                removedAt: null,
+                from: 'travel@agency.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e113',
+                createdAt: formatDateToMonthDay(1731133930500),
+                subject: 'Payment Received',
+                body: 'We have received your payment. Thank you!',
+                isRead: true,
+                sentAt: 1731133930594,
+                removedAt: null,
+                from: 'payments@finance.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e114',
+                createdAt: formatDateToMonthDay(1741133930500),
+                subject: 'System Alert',
+                body: 'There was a login attempt from a new device.',
+                isRead: false,
+                sentAt: 1741133930594,
+                removedAt: null,
+                from: 'alerts@system.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e115',
+                createdAt: formatDateToMonthDay(1751133930500),
+                subject: 'Weekly Report',
+                body: 'Here is your weekly performance report.',
+                isRead: true,
+                sentAt: 1751133930594,
+                removedAt: null,
+                from: 'reports@company.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e116',
+                createdAt: formatDateToMonthDay(1761133930500),
+                subject: 'Event Reminder',
+                body: 'Don\'t forget the event tomorrow at 6 PM.',
+                isRead: false,
+                sentAt: 1761133930594,
+                removedAt: null,
+                from: 'reminders@events.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e117',
+                createdAt: formatDateToMonthDay(1771133930500),
+                subject: 'Subscription Expiring',
+                body: 'Your subscription will expire soon. Renew now!',
+                isRead: true,
+                sentAt: 1771133930594,
+                removedAt: null,
+                from: 'subscriptions@service.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e118',
+                createdAt: formatDateToMonthDay(1781133930500),
+                subject: 'New Message',
+                body: 'You have received a new message in your inbox.',
+                isRead: false,
+                sentAt: 1781133930594,
+                removedAt: null,
+                from: 'messenger@chat.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e119',
+                createdAt: formatDateToMonthDay(1791133930500),
+                subject: 'Account Verification',
+                body: 'Please verify your account by clicking the link.',
+                isRead: true,
+                sentAt: 1791133930594,
+                removedAt: null,
+                from: 'verify@accounts.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e120',
+                createdAt: formatDateToMonthDay(1801133930500),
+                subject: 'Discount Offer',
+                body: 'Enjoy a 20% discount on your next purchase.',
+                isRead: false,
+                sentAt: 1801133930594,
+                removedAt: null,
+                from: 'offers@shop.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e121',
+                createdAt: formatDateToMonthDay(1811133930500),
+                subject: 'Service Update',
+                body: 'Our service will be down for maintenance tonight.',
+                isRead: true,
+                sentAt: 1811133930594,
+                removedAt: null,
+                from: 'updates@service.com',
+                fromImgUrl: './img/unnamed.png',
+                to: 'user@appsus.com'
+            }]
         saveToStorage(MAIL_KEY, mails)
     }
 }
@@ -214,4 +337,12 @@ function _longSubject(subject, maxWords = 40) {
         return truncatedWords.join(' ') + '...'
     }
     return subject
+}
+
+function formatDateToMonthDay(dateObject) {
+    const formatter = new Intl.DateTimeFormat('en-US', {
+        month: 'long',
+        day: 'numeric'
+    })
+    return formatter.format(dateObject);
 }

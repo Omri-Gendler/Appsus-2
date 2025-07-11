@@ -16,4 +16,5 @@
 @import './apps/mail/MailPreview.css';
 @import './apps/mail/MailDetails.css';
 @import './apps/mail/MailFilter.css';
+@import './apps/mail/SideBar.css';
 @import './basics/mq.css';

@@ -34,7 +34,6 @@ h1 {
 }
 
 .mail-from {
-    font-weight: bold;
     flex-shrink: 0;
     width: 220px;
     padding-right: 20px;
@@ -45,21 +44,27 @@ h1 {
 }
 
 .mail-subject {
+    display: flex;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.mail-body-preview {
+    font-weight: normal;
 }
 
 .delete-btn {
     display: none;
     border: none;
     background-color: transparent;
-    padding: 8px;
     cursor: pointer;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
     transition: background-color 0.2s ease-in-out;
+    padding: 0;
+    margin: 0;
 }
 
 .delete-btn:focus,
@@ -72,17 +77,20 @@ h1 {
     display: none;
     border: none;
     background-color: transparent;
-    padding: 8px;
+    /* padding: 8px; */
     cursor: pointer;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
     transition: background-color 0.2s ease-in-out;
-
+    padding: 0;
+    margin: 0;
 }
 
 .unread-btn:focus,
 .unread-btn:hover {
     background-color: #e0e0e0;
     outline: none;
+    padding: 0;
+    margin: 0;
 }

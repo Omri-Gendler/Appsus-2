@@ -2,6 +2,7 @@
     height: 100vh;
     overflow-y: auto;
     margin-top: 3rem;
+    padding: 1rem;
 }
 
 .read {
@@ -20,6 +21,7 @@
 }
 
 .mail-status {
+    display: flex;
     width: 24px;
     flex-shrink: 0;
     text-align: center;
@@ -32,6 +34,15 @@
     position: relative;
 }
 
+.mail-created {
+    margin-left: auto;
+}
+
 .mail-list-btns {
     display: flex;
+    margin-left: auto;
+}
+
+.mail-list-created-btns {
+    margin-left: auto;
 }

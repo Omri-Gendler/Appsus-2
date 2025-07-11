@@ -1,24 +1,51 @@
-@media (max-width: 840px) {
-
+@media (max-width: 1030px) {
     .search-input {
         width: 15rem;
     }
 
-    .search-icon {
-        position: absolute;
-        left: 1.5rem;
-        top: 0.5rem;
+    .isread-filter {
+        right: 27rem;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
+    .search-input {
+        width: 8rem;
+    }
 
+    .isread-filter {
+        right: 20rem;
+    }
+}
+
+@media (max-width: 680px) {
+    .search-input {
+        display: none;
+    }
+
+    .isread-filter {
+        display: none;
+    }
+
+    .search-icon {
+        display: none;
+    }
+}
+
+
+
+
+@media (max-width: 600px) {
     html {
         height: 100vh;
+        margin: 0;
+        padding: 0;
     }
 
     body {
         height: 100%;
+        margin: 0;
+        padding: 0;
     }
 
     h1 {
@@ -64,6 +91,14 @@
 
     .mail-main-content {
         overflow-y: auto;
+        grid-auto-rows: max-content;
+    }
+
+    .mail-main-content {
+        display: grid;
+        column-count: 1;
+        width: 100%;
+        justify-content: center;
     }
 
     .side-bar {
@@ -101,6 +136,10 @@
     }
 
     .isread-filter {
+        display: none;
+    }
+
+    .mail-created {
         display: none;
     }
 }

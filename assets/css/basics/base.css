@@ -24,6 +24,8 @@ body {
     letter-spacing: large;
     background-color: #f8fafd;
     height: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 h1,

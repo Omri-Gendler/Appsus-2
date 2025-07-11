@@ -1,7 +1,7 @@
-.mail-header-details {
+.header-mail-details {
     display: flex;
-    margin-left: 0.5rem;
     gap: 1rem;
+    align-items: center;
 }
 
 .mail-details-container {
@@ -44,10 +44,6 @@
     width: 4.2rem;
 }
 
-.side-bar span {
-    padding-top: 2rem
-}
-
 .mail-main-content h1 {
     /* padding-left: 20px; */
     margin-top: 26px;
@@ -55,6 +51,7 @@
 
 .mail-main-content p {
     /* padding-right: 1rem; */
+    margin: 1px 1px 1px 1px;
 }
 
 .mail-details-meta {
@@ -69,6 +66,7 @@
     height: 40px;
     border-radius: 50%;
     background-color: #e0e0e0;
+    margin: 1rem 0.5rem 1rem;
 }
 
 .sender-info p,

@@ -1,6 +1,7 @@
 @media (max-width: 840px) {
 
 
+
     /* Shorten the search bar */
     .search-input {
         width: 15rem;
@@ -34,6 +35,12 @@
 
     .mail-list {
         padding: 0 0.2em;
+    }
+
+    .mail-list-container {
+        height: 100vh;
+        margin-top: 2rem;
+        overflow-y: auto;
     }
 
     .mail-list-container {

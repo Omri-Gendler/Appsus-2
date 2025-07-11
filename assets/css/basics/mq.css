@@ -1,4 +1,5 @@
 @media (max-width: 840px) {
+
     /* Shorten the search bar */
     .search-input {
         width: 15rem;
@@ -19,15 +20,17 @@
         padding: 0 0.2em;
     }
 
+    .mail-list-container {
+        height: 100vh;
+        margin-top: 2rem;
+        overflow-y: auto;
+    }
+
     .mail-preview {
         flex-direction: column;
         align-items: flex-start;
         /* padding: 10px 4px; */
         font-size: 0.95em;
-    }
-
-    .app-header {
-        background-color: red;
     }
 
     .side-bar {
@@ -37,10 +40,17 @@
     .subject {
         margin-left: 0px;
     }
-  
+
+    .search-bar-container {
+        display: flex;
+        position: absolute;
+        bottom: 38.5rem;
+        z-index: 1;
+    }
+
+    .search-icon {
+        position: relative;
+        left: 3.5rem;
+        top: 0.5rem;
+    }
 }
-
-
-
-
-

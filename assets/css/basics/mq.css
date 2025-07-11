@@ -1,5 +1,6 @@
 @media (max-width: 840px) {
 
+
     /* Shorten the search bar */
     .search-input {
         width: 15rem;
@@ -41,6 +42,12 @@
         overflow-y: auto;
     }
 
+    .mail-list-container {
+        height: 100vh;
+        margin-top: 2rem;
+        overflow-y: auto;
+    }
+
     .mail-preview {
         flex-direction: column;
         align-items: flex-start;
@@ -68,6 +75,20 @@
     .subject {
         margin-left: 0px;
     }
+
+    .search-bar-container {
+        display: flex;
+        position: absolute;
+        bottom: 38.5rem;
+        z-index: 1;
+    }
+
+    .search-icon {
+        position: relative;
+        left: 3.5rem;
+        top: 0.5rem;
+    }
+}
 
     .search-bar-container {
         display: flex;

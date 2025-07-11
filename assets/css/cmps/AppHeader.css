@@ -19,4 +19,5 @@ nav a.active {
 .header-logo {
     width: 50px;
     object-fit: contain;
+    background: var(--bg1);
 }

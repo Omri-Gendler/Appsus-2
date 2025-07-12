@@ -1,6 +1,10 @@
+import { MailPreview } from '../cmps/MailPreview.jsx'
+import { mailService } from '../services/mail.service.js'
+
 const { useState, useEffect } = React
 const { Link, Route, Routes, NavLink } = ReactRouterDOM
 const Router = ReactRouterDOM.HashRouter
+
 
 
 export function Starred() {
@@ -13,8 +17,6 @@ export function Starred() {
     function loadStarredMails() {
         mailService.query({ isStarred: true })
             .then(setStarredMails)
-            console.log('Starred mails loaded:', starredMails)
-            console.log('Starred mails loaded:', starredMails)
             .catch(err => {
                 console.log('Error loading starred mails:', err)
             })
@@ -23,18 +25,13 @@ export function Starred() {
     if (!starredMails) return <div className="container">Loading...</div>
 
     return (
-        <div className="starred-starredMails">
-            <h2>Starred Mails</h2>
-            <div className="side-bar">
-                <span><NavLink to='/mail'>Inbox</NavLink></span>
-                <span><NavLink to='starred'>Starred</NavLink></span>
-                <span><NavLink to='/mail/snoozed'>Snoozed</NavLink></span>
-                <span><NavLink to='/mail/sent'>Sent</NavLink></span>
-                <span><NavLink to='/mail/drafts'>Drafts</NavLink></span>
-            </div>
 
-            <ul>
+        <div className="mail-list-container">
+
+
+            <ul className="mai-list">
                 {starredMails.map(mail => (
+                    mail.isStarred &&
                     <li key={mail.id}>
                         <h3>{mail.subject}</h3>
                         <p>{mail.body}</p>

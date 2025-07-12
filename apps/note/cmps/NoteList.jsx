@@ -14,7 +14,7 @@ export function NoteList({pinnedNotes, notes, onRemoveNote , onUpdateNote, onSel
         <Fragment>
             {pinnedNotes && pinnedNotes.length > 0 && (
                 <section>
-                    <h2>Pinned</h2>
+                    <h3>Pinned</h3>
                     <ul className="note-list">
                         {pinnedNotes.map(note => (
                             <NotePreview
@@ -31,7 +31,7 @@ export function NoteList({pinnedNotes, notes, onRemoveNote , onUpdateNote, onSel
 
             {unpinnedNotes.length > 0 && (
                 <section>
-                    {pinnedNotes && pinnedNotes.length > 0 && <h2>Others</h2>}
+                    {pinnedNotes && pinnedNotes.length > 0 && <h3>Others</h3>}
                     <ul className="note-list">
                         {unpinnedNotes.map(note => (
                             <NotePreview

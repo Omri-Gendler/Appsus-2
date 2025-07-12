@@ -38,7 +38,7 @@ body{
 .note-expanded .note-actions{
     position: absolute;
     bottom: 0px;
-   
+   margin-left: 15px;
     display: flex;
     padding: 0.2rem;
     left: 15px;

@@ -17,6 +17,7 @@ export const mailService = {
     save,
     getEmptyMail,
     getDefaultFilter,
+    getInboxNumber,
 }
 
 function query(filterBy = {}) {
@@ -79,6 +80,7 @@ function _createMails() {
                 from: 'alice@work.com',
                 to: 'user@appsus.com',
                 fromImgUrl: './img/unnamed.png',
+                isStarred: true
             },
             {
                 id: 'e103',
@@ -90,6 +92,7 @@ function _createMails() {
                 removedAt: null,
                 from: 'events@community.org',
                 fromImgUrl: './img/unnamed.png',
+                isStarred: true,
                 to: 'user@appsus.com'
             },
             {
@@ -102,6 +105,7 @@ function _createMails() {
                 removedAt: null,
                 from: 'billing@services.com',
                 fromImgUrl: './img/unnamed.png',
+                isStarred: true,
                 to: 'user@appsus.com'
             },
             {
@@ -114,7 +118,8 @@ function _createMails() {
                 removedAt: null,
                 from: 'friends@social.com',
                 fromImgUrl: './img/unnamed.png',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStarred: true
             },
             {
                 id: 'e106',
@@ -126,7 +131,8 @@ function _createMails() {
                 removedAt: null,
                 from: 'newsletter@updates.com',
                 fromImgUrl: './img/unnamed.png',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStarred: true
             },
             {
                 id: 'e107',
@@ -138,7 +144,8 @@ function _createMails() {
                 removedAt: null,
                 from: 'appointments@clinic.com',
                 fromImgUrl: './img/unnamed.png',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStarred: true
             },
             {
                 id: 'e108',
@@ -150,7 +157,8 @@ function _createMails() {
                 removedAt: null,
                 from: 'security@webapp.com',
                 fromImgUrl: './img/unnamed.png',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStarred: true
             },
             {
                 id: 'e109',
@@ -162,7 +170,8 @@ function _createMails() {
                 removedAt: null,
                 from: 'support@platform.com',
                 fromImgUrl: './img/unnamed.png',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStarred: true
             },
             {
                 id: 'e110',
@@ -174,7 +183,8 @@ function _createMails() {
                 removedAt: null,
                 from: 'orders@shop.com',
                 fromImgUrl: './img/unnamed.png',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStarred: true
             },
             {
                 id: 'e111',
@@ -186,7 +196,8 @@ function _createMails() {
                 removedAt: null,
                 from: 'feedback@service.com',
                 fromImgUrl: './img/unnamed.png',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStarred: true
             },
             {
                 id: 'e112',
@@ -198,7 +209,8 @@ function _createMails() {
                 removedAt: null,
                 from: 'travel@agency.com',
                 fromImgUrl: './img/unnamed.png',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStarred: true
             },
             {
                 id: 'e113',
@@ -210,7 +222,8 @@ function _createMails() {
                 removedAt: null,
                 from: 'payments@finance.com',
                 fromImgUrl: './img/unnamed.png',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStarred: true
             },
             {
                 id: 'e114',
@@ -222,7 +235,8 @@ function _createMails() {
                 removedAt: null,
                 from: 'alerts@system.com',
                 fromImgUrl: './img/unnamed.png',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStarred: true
             },
             {
                 id: 'e115',
@@ -234,7 +248,8 @@ function _createMails() {
                 removedAt: null,
                 from: 'reports@company.com',
                 fromImgUrl: './img/unnamed.png',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStarred: true
             },
             {
                 id: 'e116',
@@ -246,7 +261,8 @@ function _createMails() {
                 removedAt: null,
                 from: 'reminders@events.com',
                 fromImgUrl: './img/unnamed.png',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStarred: true
             },
             {
                 id: 'e117',
@@ -258,7 +274,8 @@ function _createMails() {
                 removedAt: null,
                 from: 'subscriptions@service.com',
                 fromImgUrl: './img/unnamed.png',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStarred: true
             },
             {
                 id: 'e118',
@@ -270,7 +287,8 @@ function _createMails() {
                 removedAt: null,
                 from: 'messenger@chat.com',
                 fromImgUrl: './img/unnamed.png',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStarred: true
             },
             {
                 id: 'e119',
@@ -282,7 +300,8 @@ function _createMails() {
                 removedAt: null,
                 from: 'verify@accounts.com',
                 fromImgUrl: './img/unnamed.png',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStarred: true
             },
             {
                 id: 'e120',
@@ -294,7 +313,8 @@ function _createMails() {
                 removedAt: null,
                 from: 'offers@shop.com',
                 fromImgUrl: './img/unnamed.png',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStarred: true
             },
             {
                 id: 'e121',
@@ -306,7 +326,8 @@ function _createMails() {
                 removedAt: null,
                 from: 'updates@service.com',
                 fromImgUrl: './img/unnamed.png',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStarred: true
             }]
         saveToStorage(MAIL_KEY, mails)
     }
@@ -345,4 +366,9 @@ function formatDateToMonthDay(dateObject) {
         day: 'numeric'
     })
     return formatter.format(dateObject);
+}
+
+function getInboxNumber(mails) {
+    console.log('mails:', mails)
+    return mails.length
 }

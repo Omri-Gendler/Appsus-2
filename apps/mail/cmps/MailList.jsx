@@ -1,6 +1,6 @@
 import { MailPreview } from "./MailPreview.jsx"
 
-export function MailList({ mails, onRemoveMail, onUnreadBtn }) {
+export function MailList({ mails, onRemoveMail, onUnreadBtn, onStarredBtn }) {
 
     if (!mails || mails.length === 0) {
         return <div className="no-emails">No emails to show</div>
@@ -14,6 +14,7 @@ export function MailList({ mails, onRemoveMail, onUnreadBtn }) {
                         mail={mail}
                         onRemoveMail={onRemoveMail}
                         onUnreadBtn={onUnreadBtn}
+                        onStarredBtn={onStarredBtn}
                     />
                 ))}
             </ul>

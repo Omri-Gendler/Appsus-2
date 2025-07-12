@@ -36,6 +36,7 @@
 
 .mail-created {
     margin-left: auto;
+    font-weight: normal;
 }
 
 .mail-list-btns {
@@ -45,4 +46,4 @@
 
 .mail-list-created-btns {
     margin-left: auto;
-}
+} 

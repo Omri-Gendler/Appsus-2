@@ -40,8 +40,56 @@
     display: grid;
     align-items: baseline;
     text-align: center;
-    background-color: #e9eef6;
-    width: 4.2rem;
+    background-color: rgb(248 250 253);
+    width: 10.2rem;
+    gap: 1rem;
+}
+
+.inbox-link {
+    margin-top: 3rem;
+}
+
+.inbox-link:hover,
+.important-link:hover,
+.starred-link:hover,
+.sent-link:hover,
+.drafts-link:hover {
+    background-color: #e0e0e0;
+    outline: none;
+
+
+}
+
+.side-bar a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 8px 24px;
+    border-radius: 25px;
+    color: black;
+    gap: 18px;
+}
+
+.side-bar a::before {
+    font-size: 20px;
+}
+
+.side-bar a::after {
+    margin-left: auto;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.side-bar a.active {
+    background-color: rgb(211 227 253);
+    color: black;
+    font-weight: bold;
+}
+
+.side-bar a.active::before,
+.side-bar a.active::after {
+    color: white;
 }
 
 .mail-main-content h1 {

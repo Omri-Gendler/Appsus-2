@@ -8,6 +8,7 @@ export function Starred() {
     function loadStarredMails() {
         mailService.query({ isStarred: true })
             .then(setStarredMails)
+            console.log('Starred mails loaded:', starredMails)
             .catch(err => {
                 console.log('Error loading starred mails:', err);
             });

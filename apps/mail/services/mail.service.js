@@ -80,19 +80,19 @@ function _createMails() {
                 from: 'alice@work.com',
                 to: 'user@appsus.com',
                 fromImgUrl: './img/unnamed.png',
-                isStarred: true
+                isStarred: false
             },
             {
                 id: 'e103',
                 createdAt: formatDateToMonthDay(1651133930500),
                 subject: 'Invitation',
                 body: 'You are invited to our annual meetup.',
-                isRead: true,
+                isRead: false,
                 sentAt: 1621133930594,
                 removedAt: null,
                 from: 'events@community.org',
                 fromImgUrl: './img/unnamed.png',
-                isStarred: true,
+                isStarred: false,
                 to: 'user@appsus.com'
             },
             {
@@ -105,7 +105,7 @@ function _createMails() {
                 removedAt: null,
                 from: 'billing@services.com',
                 fromImgUrl: './img/unnamed.png',
-                isStarred: true,
+                isStarred: false,
                 to: 'user@appsus.com'
             },
             {
@@ -113,13 +113,13 @@ function _createMails() {
                 createdAt: formatDateToMonthDay(1641133930500),
                 subject: 'Happy Birthday!',
                 body: 'Wishing you a wonderful birthday!',
-                isRead: true,
+                isRead: false,
                 sentAt: 1641133930594,
                 removedAt: null,
                 from: 'friends@social.com',
                 fromImgUrl: './img/unnamed.png',
                 to: 'user@appsus.com',
-                isStarred: true
+                isStarred: false
             },
             {
                 id: 'e106',
@@ -132,20 +132,20 @@ function _createMails() {
                 from: 'newsletter@updates.com',
                 fromImgUrl: './img/unnamed.png',
                 to: 'user@appsus.com',
-                isStarred: true
+                isStarred: false
             },
             {
                 id: 'e107',
                 createdAt: formatDateToMonthDay(1671133930500),
                 subject: 'Appointment Confirmation',
                 body: 'Your appointment is confirmed for July 15th.',
-                isRead: true,
+                isRead: false,
                 sentAt: 1671133930594,
                 removedAt: null,
                 from: 'appointments@clinic.com',
                 fromImgUrl: './img/unnamed.png',
                 to: 'user@appsus.com',
-                isStarred: true
+                isStarred: false
             },
             {
                 id: 'e108',
@@ -158,20 +158,20 @@ function _createMails() {
                 from: 'security@webapp.com',
                 fromImgUrl: './img/unnamed.png',
                 to: 'user@appsus.com',
-                isStarred: true
+                isStarred: false
             },
             {
                 id: 'e109',
                 createdAt: formatDateToMonthDay(1691133930500),
                 subject: 'Welcome!',
                 body: 'Welcome to our platform. We are glad to have you.',
-                isRead: true,
+                isRead: false,
                 sentAt: 1691133930594,
                 removedAt: null,
                 from: 'support@platform.com',
                 fromImgUrl: './img/unnamed.png',
                 to: 'user@appsus.com',
-                isStarred: true
+                isStarred: false
             },
             {
                 id: 'e110',
@@ -184,20 +184,20 @@ function _createMails() {
                 from: 'orders@shop.com',
                 fromImgUrl: './img/unnamed.png',
                 to: 'user@appsus.com',
-                isStarred: true
+                isStarred: false
             },
             {
                 id: 'e111',
                 createdAt: formatDateToMonthDay(1711133930500),
                 subject: 'Feedback Request',
                 body: 'Please share your feedback about our service.',
-                isRead: true,
+                isRead: false,
                 sentAt: 1711133930594,
                 removedAt: null,
                 from: 'feedback@service.com',
                 fromImgUrl: './img/unnamed.png',
                 to: 'user@appsus.com',
-                isStarred: true
+                isStarred: false
             },
             {
                 id: 'e112',
@@ -210,20 +210,20 @@ function _createMails() {
                 from: 'travel@agency.com',
                 fromImgUrl: './img/unnamed.png',
                 to: 'user@appsus.com',
-                isStarred: true
+                isStarred: false
             },
             {
                 id: 'e113',
                 createdAt: formatDateToMonthDay(1731133930500),
                 subject: 'Payment Received',
                 body: 'We have received your payment. Thank you!',
-                isRead: true,
+                isRead: false,
                 sentAt: 1731133930594,
                 removedAt: null,
                 from: 'payments@finance.com',
                 fromImgUrl: './img/unnamed.png',
                 to: 'user@appsus.com',
-                isStarred: true
+                isStarred: false
             },
             {
                 id: 'e114',
@@ -236,20 +236,20 @@ function _createMails() {
                 from: 'alerts@system.com',
                 fromImgUrl: './img/unnamed.png',
                 to: 'user@appsus.com',
-                isStarred: true
+                isStarred: false
             },
             {
                 id: 'e115',
                 createdAt: formatDateToMonthDay(1751133930500),
                 subject: 'Weekly Report',
                 body: 'Here is your weekly performance report.',
-                isRead: true,
+                isRead: false,
                 sentAt: 1751133930594,
                 removedAt: null,
                 from: 'reports@company.com',
                 fromImgUrl: './img/unnamed.png',
                 to: 'user@appsus.com',
-                isStarred: true
+                isStarred: false
             },
             {
                 id: 'e116',
@@ -262,20 +262,20 @@ function _createMails() {
                 from: 'reminders@events.com',
                 fromImgUrl: './img/unnamed.png',
                 to: 'user@appsus.com',
-                isStarred: true
+                isStarred: false
             },
             {
                 id: 'e117',
                 createdAt: formatDateToMonthDay(1771133930500),
                 subject: 'Subscription Expiring',
                 body: 'Your subscription will expire soon. Renew now!',
-                isRead: true,
+                isRead: false,
                 sentAt: 1771133930594,
                 removedAt: null,
                 from: 'subscriptions@service.com',
                 fromImgUrl: './img/unnamed.png',
                 to: 'user@appsus.com',
-                isStarred: true
+                isStarred: false
             },
             {
                 id: 'e118',
@@ -288,20 +288,20 @@ function _createMails() {
                 from: 'messenger@chat.com',
                 fromImgUrl: './img/unnamed.png',
                 to: 'user@appsus.com',
-                isStarred: true
+                isStarred: false
             },
             {
                 id: 'e119',
                 createdAt: formatDateToMonthDay(1791133930500),
                 subject: 'Account Verification',
                 body: 'Please verify your account by clicking the link.',
-                isRead: true,
+                isRead: false,
                 sentAt: 1791133930594,
                 removedAt: null,
                 from: 'verify@accounts.com',
                 fromImgUrl: './img/unnamed.png',
                 to: 'user@appsus.com',
-                isStarred: true
+                isStarred: false
             },
             {
                 id: 'e120',
@@ -314,20 +314,20 @@ function _createMails() {
                 from: 'offers@shop.com',
                 fromImgUrl: './img/unnamed.png',
                 to: 'user@appsus.com',
-                isStarred: true
+                isStarred: false
             },
             {
                 id: 'e121',
                 createdAt: formatDateToMonthDay(1811133930500),
                 subject: 'Service Update',
                 body: 'Our service will be down for maintenance tonight.',
-                isRead: true,
+                isRead: false,
                 sentAt: 1811133930594,
                 removedAt: null,
                 from: 'updates@service.com',
                 fromImgUrl: './img/unnamed.png',
                 to: 'user@appsus.com',
-                isStarred: true
+                isStarred: false
             }]
         saveToStorage(MAIL_KEY, mails)
     }

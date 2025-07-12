@@ -118,3 +118,9 @@ h1 {
 .mail-filter-container {
     margin-bottom: 2.5rem;
 }
+
+.no-emails {
+    display: grid;
+    position: absolute;
+    bottom: 28rem;
+}

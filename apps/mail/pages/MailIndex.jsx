@@ -74,7 +74,13 @@ export function MailIndex({ logo }) {
         setMails(updatedMails)
     }
 
+    function countUnreadMails() {
+        return mails.filter(mail => !mail.isRead).length
+    }
+
     if (!mails) return <div className="container">Loading...</div>
+    const countUnreadMail = countUnreadMails()
+    console.log('countUnreadMails:', countUnreadMail)
     return (
         <div className="mail-inbox">
 
@@ -87,7 +93,7 @@ export function MailIndex({ logo }) {
                 )}
                 <div className="side-bar">
                     <div className="inbox-link">
-                        <span><NavLink to='/mail'><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#black"><path d="M312-312h480v-144H677q-19 32-52 52t-73.47 20Q512-384 479-404t-52-52H312v144Zm239.58-144Q582-456 603-477.15T624-528h168v-264H312v264h168q0 30 21.03 51 21.02 21 50.55 21ZM312-240q-29.7 0-50.85-21.15Q240-282.3 240-312v-480q0-29.7 21.15-50.85Q282.3-864 312-864h480q29.7 0 50.85 21.15Q864-821.7 864-792v480q0 29.7-21.15 50.85Q821.7-240 792-240H312ZM168-96q-29.7 0-50.85-21.15Q96-138.3 96-168v-552h72v552h552v72H168Zm144-216h480-480Z" /></svg> Inbox {mails.length}</NavLink></span>
+                        <span><NavLink to='/mail'><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#black"><path d="M312-312h480v-144H677q-19 32-52 52t-73.47 20Q512-384 479-404t-52-52H312v144Zm239.58-144Q582-456 603-477.15T624-528h168v-264H312v264h168q0 30 21.03 51 21.02 21 50.55 21ZM312-240q-29.7 0-50.85-21.15Q240-282.3 240-312v-480q0-29.7 21.15-50.85Q282.3-864 312-864h480q29.7 0 50.85 21.15Q864-821.7 864-792v480q0 29.7-21.15 50.85Q821.7-240 792-240H312ZM168-96q-29.7 0-50.85-21.15Q96-138.3 96-168v-552h72v552h552v72H168Zm144-216h480-480Z" /></svg> Inbox {countUnreadMail}</NavLink></span>
                     </div>
                     <div className="starred-link">
                         <span><NavLink to='/mail/starred'><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#black"><path d="m352-293 128-76 129 76-34-144 111-95-147-13-59-137-59 137-147 13 112 95-34 144ZM243-144l63-266L96-589l276-24 108-251 108 252 276 23-210 179 63 266-237-141-237 141Zm237-333Z" /></svg> Starred</NavLink></span>
@@ -103,11 +109,12 @@ export function MailIndex({ logo }) {
                     </div>
                 </div>
             </aside>
+            {<MailFilter mails={mails} onSetFilterBy={onSetFilterBy} filterBy={filterBy} />}
             <main className="mail-main-content">
-                {<MailList mails={mails} logo={logo} onStarredBtn={onStarredBtn} onRemoveMail={onRemoveMail} onUnreadBtn={onUnreadBtn} />}
-                {<MailFilter mails={mails} onSetFilterBy={onSetFilterBy} filterBy={filterBy} />}
                 <Routes>
-                    <Route path="/mail/starred" element={<Starred />} />
+                    <Route path="/" element={<MailList mails={mails} logo={logo} onStarredBtn={onStarredBtn} onRemoveMail={onRemoveMail} onUnreadBtn={onUnreadBtn} />} />
+                    <Route path="starred" element={<Starred />} />
+                    <Route path=":mailId" element={<MailDetails />} />
                 </Routes>
             </main>
 

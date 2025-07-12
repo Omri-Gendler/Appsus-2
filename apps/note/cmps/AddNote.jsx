@@ -4,6 +4,9 @@ import { makeId } from "../services/util.service.js"
 import { NoteActions } from "./NoteActions.jsx"
 import { AddNoteImg } from "./AddNoteImg.jsx"
 import { AddNoteTxt } from "./AddNoteTxt.jsx"
+import { AddNoteTodos} from "./AddNoteTodos.jsx"
+import { NoteTodos } from "./NoteTodos.jsx"
+
 
 
 export function AddNote({onAddNote}){
@@ -115,6 +118,7 @@ console.log('renderNoteInputs title:', title)
   const noteTypeCmpMap = {
   NoteTxt: AddNoteTxt,
   NoteImg: AddNoteImg,
+  NoteTodos: AddNoteTodos,
 }
 
 

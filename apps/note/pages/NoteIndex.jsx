@@ -90,18 +90,13 @@ function onAddNote(noteToSave) {
 
 
 
-logo = "https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
+
 
 if (!notes) return <div className="container">Loading...</div>
 return  <div className="notes-container">
     
-                {/* <aside className="notes-side-bar">
+                <aside className="notes-side-bar">
     
-                    {logo && (
-                        <div className="notes-logo-container">
-                            <img src={logo} alt="Section Logo" className="header-logo"/>
-                        </div>
-                    )}
                     <div className="notes-side-bar">
                         <span><Link to='/notes'>Notes</Link></span>
                         <span><Link to='/starred'>Reminders</Link></span>
@@ -110,7 +105,7 @@ return  <div className="notes-container">
                         <span><Link to='/drafts'>Drafts</Link></span>
                         <span><Link to='/trash'>Trash</Link></span>
                     </div>
-                </aside> */}
+                </aside>
                 <main className="notes-main-content">
                     <AddNote onAddNote={onAddNote} />
                     

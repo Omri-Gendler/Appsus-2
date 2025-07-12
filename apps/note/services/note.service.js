@@ -20,13 +20,13 @@ const gNotes = [
         createdAt: 1112223,
         type: 'NoteImg',
         isPinned: false,
-        info: { url: 'http://some-img/me', title: 'Bobi and Me' },
+        info: { url: './img/noteImgs/horse.jpeg', title: 'Bobi and Me' ,txt:''},
         style: { backgroundColor: '#fff' }
     },
     {
         id: 'n103',
         createdAt: 1112224,
-        type: 'NoteTodos',
+        type: 'NoteTxt',
         isPinned: false,
         info: {
             title: 'Get my stuff together',

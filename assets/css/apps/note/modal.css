@@ -19,6 +19,7 @@
   width: 90%;
 }
 
+
 .modal-close-button{
   position: absolute;
   top: -20px;
@@ -89,4 +90,14 @@
 
 .open{
   display: block;
+}
+
+
+.color-picker-wrapper {
+  position: absolute;
+
+}
+
+.modal-content textarea{
+  height: fit-content;
 }

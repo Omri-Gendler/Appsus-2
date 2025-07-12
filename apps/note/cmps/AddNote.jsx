@@ -2,13 +2,21 @@
 const { useState, useRef ,useEffect,} = React
 import { makeId } from "../services/util.service.js"
 import { NoteActions } from "./NoteActions.jsx"
+import { AddNoteImg } from "./AddNoteImg.jsx"
+import { AddNoteTxt } from "./AddNoteTxt.jsx"
+import { AddNoteTodos} from "./AddNoteTodos.jsx"
+import { NoteTodos } from "./NoteTodos.jsx"
+
 
 
 export function AddNote({onAddNote}){
-    const [isExpanded, setIsExpanded] = useState(false)
-    const [title, setNoteTitle] = useState('')
-    const [txt, setNoteTxt] = useState('')
-    const [color, setColor] = useState('#fff') // default note bg color
+  const [isExpanded, setIsExpanded] = useState(false)
+  const [title, setNoteTitle] = useState('')
+  const [txt, setNoteTxt] = useState('')
+  const [url, setUrl] = useState('')
+  const [color, setColor] = useState('#fff') 
+  const [selectedType, setSelectedType] = useState('')
+  
 
     
     const containerRef = useRef()
@@ -21,45 +29,98 @@ export function AddNote({onAddNote}){
 
     function expandNote() {
         setIsExpanded(true)
+        if (!selectedType) setSelectedType('NoteTxt')
     }
 
 
-   function onSubmit(ev){
-   ev.stopPropagation()
-    if (title || txt){
-       const newNote = {
-            id: makeId(), 
-            createdAt: Date.now(),
-            type: 'NoteTxt',
-            isPinned: false, 
-            style: {
-                backgroundColor: color,
-            },
-            info: {
-                title, 
-                txt    
-            }
-          }
 
-        onAddNote(newNote)
+  function onSubmit(ev) {
+    ev.preventDefault()
+    ev.stopPropagation()
+
+  
+
+    let noteInfo = {}
+
+      if (selectedType === 'NoteTxt') {
+        noteInfo = {
+          title,
+          txt,
+        }
+      }
+
+      if (selectedType === 'NoteImg') {
+        noteInfo = {
+          title,
+          url,
+          txt,
+        }
+      }
+
+    const newNote = {
+      id: makeId(),
+      createdAt: Date.now(),
+      type: selectedType,
+      isPinned: false,
+      style: { backgroundColor: color },
+      info: noteInfo ,
     }
+
+    onAddNote(newNote)
+
     setIsExpanded(false)
     setNoteTitle('')
     setNoteTxt('')
+    setUrl('')
     setColor('#fff')
+  }
 
-   }
+
+function renderNoteInputs() {
+  if (!selectedType) return null
+
+  const DynamicCmp = noteTypeCmpMap[selectedType]
+  if (!DynamicCmp) return null
+
+  const commonProps = {
+    title,
+    setTitle: setNoteTitle,
+    txt,
+    setTxt: setNoteTxt,
+    color,
+    titleInputRef,
+  }
+
+  const specificProps = selectedType === 'NoteImg'
+  ? {
+      url,
+      setUrl,
+    }
+  : {}
+console.log('renderNoteInputs title:', title)
 
 
-     useEffect(() => {
+  return (
+    <DynamicCmp
+      {...commonProps}
+      {...specificProps}
+    />
+  )
+}
+
+
+  useEffect(() => {
     if (isExpanded && titleInputRef.current) {
       titleInputRef.current.focus()
     }
   }, [isExpanded])
 
-  function onEdit() {}
-  function onPin() {}
-  function onDelete() {}
+  const noteTypeCmpMap = {
+  NoteTxt: AddNoteTxt,
+  NoteImg: AddNoteImg,
+  NoteTodos: AddNoteTodos,
+}
+
 
   return (
     <form
@@ -71,45 +132,30 @@ export function AddNote({onAddNote}){
     >
       {!isExpanded && (
         <input
+          onClick={() => setSelectedType('NoteTxt')}
           type="text"
           placeholder="Take a note..."
           className="note-input collapsed"
           readOnly
-          style={{backgroundColor: color}}
+          style={{ backgroundColor: color }}
         />
       )}
 
       {isExpanded && (
-        <div className="note-expanded"> 
-          <input
-          ref={titleInputRef}
-            type="text"
-            placeholder="Title"
-            className="note-title"
-            value={title}
-            onChange={(ev) => setNoteTitle(ev.target.value)}
-            style={{ backgroundColor: color }}
-          />
-          <textarea
-            placeholder="Take a note..."
-            className="note-txt"
-            value={txt}
-            onChange={(ev) => setNoteTxt(ev.target.value)}
-            style={{ backgroundColor: color }}
-          />
-         <NoteActions
-            onEdit={onEdit}
-            onPin={onPin}
-            onDelete={onDelete}
-            onColor={handlePickColor}
-            color={color}
-            setColor={setColor}
-            isInForm={true}
-          />
+        <div className="note-expanded">
+        {renderNoteInputs()}
+
+
+            <NoteActions
+              onColor={handlePickColor}
+              color={color}
+              setColor={setColor}
+              isInForm={true}
+              setSelectedType={setSelectedType}
+            />
+
         </div>
       )}
     </form>
   )
-
-    
 }

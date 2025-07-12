@@ -1,11 +1,12 @@
 import { NotePreview } from "./NotePreview.jsx"
-const {useState, Fragment} = React
+const {useState, Fragment,useRef, useEffect} = React
 
-export function NoteList({pinnedNotes, notes, onRemoveNote , onUpdateNote}) {
+export function NoteList({pinnedNotes, notes, onRemoveNote , onUpdateNote, onSelectNote,selectedNoteId}) {
    
     if (!notes || notes.length === 0) {
         return <div className="no-notes">No notes to show</div>
     }
+
 
     const unpinnedNotes = notes.filter(note => !note.isPinned)
 
@@ -13,7 +14,7 @@ export function NoteList({pinnedNotes, notes, onRemoveNote , onUpdateNote}) {
         <Fragment>
             {pinnedNotes && pinnedNotes.length > 0 && (
                 <section>
-                    <h2>Pinned</h2>
+                    <h3>Pinned</h3>
                     <ul className="note-list">
                         {pinnedNotes.map(note => (
                             <NotePreview
@@ -21,6 +22,7 @@ export function NoteList({pinnedNotes, notes, onRemoveNote , onUpdateNote}) {
                                 note={note}
                                 onRemoveNote={onRemoveNote}
                                 onUpdateNote={onUpdateNote}
+                                onSelectNote={onSelectNote} 
                             />
                         ))}
                     </ul>
@@ -29,7 +31,7 @@ export function NoteList({pinnedNotes, notes, onRemoveNote , onUpdateNote}) {
 
             {unpinnedNotes.length > 0 && (
                 <section>
-                    {pinnedNotes && pinnedNotes.length > 0 && <h2>Others</h2>}
+                    {pinnedNotes && pinnedNotes.length > 0 && <h3>Others</h3>}
                     <ul className="note-list">
                         {unpinnedNotes.map(note => (
                             <NotePreview
@@ -37,6 +39,7 @@ export function NoteList({pinnedNotes, notes, onRemoveNote , onUpdateNote}) {
                                 note={note}
                                 onRemoveNote={onRemoveNote}
                                 onUpdateNote={onUpdateNote}
+                                onSelectNote={onSelectNote} 
                             />
                         ))}
                     </ul>

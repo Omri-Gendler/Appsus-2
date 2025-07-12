@@ -15,19 +15,21 @@
   padding: 1rem;
   border-radius: 10px;
   position: relative;
-  max-width: 500px;
-  width: 90%;
+  max-width: 400px;
+  width: 100%;
+  height: 100%;
 }
 
 
 .modal-close-button{
   position: absolute;
   top: -20px;
-  right: -1rem;
+  right: 2rem;
   border: none;
   background: none;
   font-size: 1rem;
   cursor: pointer;
+
 }
 
 .delete-button{
@@ -100,4 +102,12 @@
 
 .modal-content textarea{
   height: fit-content;
+}
+
+.modal-content img{
+  max-width: 90%;
+  max-height: 500px;
+}
+.edit-note .note {
+  padding-bottom: 20px;
 }

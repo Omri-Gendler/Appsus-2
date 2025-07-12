@@ -1,7 +1,7 @@
 import { MailList } from "../cmps/MailList.jsx"
 import { MailFilter } from "../cmps/MailFilter.jsx"
 import { mailService } from "../services/mail.service.js"
-import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service.js"
+import { MailDetails } from "./MailDetails.jsx"
 import { Starred } from "./Starred.jsx"
 
 const { Link, Route, Routes, NavLink } = ReactRouterDOM
@@ -109,12 +109,12 @@ export function MailIndex({ logo }) {
                     </div>
                 </div>
             </aside>
-            {<MailFilter mails={mails} onSetFilterBy={onSetFilterBy} filterBy={filterBy} />}
             <main className="mail-main-content">
+                {<MailFilter mails={mails} onSetFilterBy={onSetFilterBy} filterBy={filterBy} />}
                 <Routes>
                     <Route path="/" element={<MailList mails={mails} logo={logo} onStarredBtn={onStarredBtn} onRemoveMail={onRemoveMail} onUnreadBtn={onUnreadBtn} />} />
-                    <Route path="starred" element={<Starred />} />
-                    <Route path=":mailId" element={<MailDetails />} />
+                    <Route path="/starred" element={<Starred />} />
+                    <Route path="/:mailId" element={<MailDetails />} />
                 </Routes>
             </main>
 

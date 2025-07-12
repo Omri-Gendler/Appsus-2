@@ -1,27 +1,33 @@
+const { useState, useEffect } = React
+const { Link, Route, Routes, NavLink } = ReactRouterDOM
+const Router = ReactRouterDOM.HashRouter
+
+
 export function Starred() {
-    const [starredMails, setStarredMails] = useState(null);
+    const [starredMails, setStarredMails] = useState(null)
 
     useEffect(() => {
-        loadStarredMails();
-    }, []);
+        loadStarredMails()
+    }, [])
 
     function loadStarredMails() {
         mailService.query({ isStarred: true })
             .then(setStarredMails)
             console.log('Starred mails loaded:', starredMails)
+            console.log('Starred mails loaded:', starredMails)
             .catch(err => {
-                console.log('Error loading starred mails:', err);
-            });
+                console.log('Error loading starred mails:', err)
+            })
     }
 
-    if (!starredMails) return <div className="container">Loading...</div>;
+    if (!starredMails) return <div className="container">Loading...</div>
 
     return (
         <div className="starred-starredMails">
             <h2>Starred Mails</h2>
             <div className="side-bar">
                 <span><NavLink to='/mail'>Inbox</NavLink></span>
-                <span><NavLink to='/mail/starred'>Starred</NavLink></span>
+                <span><NavLink to='starred'>Starred</NavLink></span>
                 <span><NavLink to='/mail/snoozed'>Snoozed</NavLink></span>
                 <span><NavLink to='/mail/sent'>Sent</NavLink></span>
                 <span><NavLink to='/mail/drafts'>Drafts</NavLink></span>

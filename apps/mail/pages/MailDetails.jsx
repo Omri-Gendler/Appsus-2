@@ -38,11 +38,11 @@ export function MailDetails() {
         <section className="mail-details-container">
 
             <aside className="side-bar">
-                <span><Link to='/mail'>Inbox</Link></span>
+                {/* <span><Link to='/mail'>Inbox</Link></span>
                 <span><Link to='/starred'>Starred</Link></span>
                 <span><Link to='/snoozed'>Snoozed</Link></span>
                 <span><Link to='/sent'>Sent</Link></span>
-                <span><Link to='/drafts'>Drafts</Link></span>
+                <span><Link to='/drafts'>Drafts</Link></span> */}
             </aside>
 
             <section className="mail-main-content">

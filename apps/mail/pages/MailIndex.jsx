@@ -33,14 +33,12 @@ export function MailIndex({ logo }) {
     function onRemoveMail(mailId) {
         mailService.remove(mailId)
             .then(() => {
-                showSuccessMsg('Mail Removed Successfully!')
                 setMails((prevMails) =>
                     prevMails.filter(mail => mail.id !== mailId)
                 )
             })
             .catch(err => {
                 console.log(err)
-                showErrorMsg('Problem removing Mail')
             })
     }
 

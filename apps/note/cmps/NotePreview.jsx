@@ -1,10 +1,12 @@
 import { NoteActions } from "./NoteActions.jsx";
-const {useState, useEffect} = React
+const {useState, useEffect , useRef} = React
+import { DynamicCmp } from "./DynamicCmp.jsx"
 
 
-export function NotePreview({ note, onRemoveNote, onUpdateNote }) {
-    const [showColorPicker, setShowColorPicker] = useState(false)
-  
+export function NotePreview({ note, onRemoveNote, onUpdateNote ,onSelectNote}) {
+
+    const colorPickerRef = useRef()
+
     function handlePickColor(pickedColor) {
     const updatedNote = {
       ...note,
@@ -17,22 +19,6 @@ export function NotePreview({ note, onRemoveNote, onUpdateNote }) {
   }
 
 
-  useEffect(() => {
-    function handleClickOutside(ev) {
-      if (modalRef.current && !modalRef.current.contains(ev.target)) {
-        setShowColorPicker(false);
-      }
-    }
-
-    if (showColorPicker) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [showColorPicker]);
-
     function onPinned(newPinnedVal) {
     const updatedNote = {
       ...note,
@@ -41,11 +27,23 @@ export function NotePreview({ note, onRemoveNote, onUpdateNote }) {
     onUpdateNote(updatedNote)
   }
 
+  function handleClick(ev) {
+    ev.stopPropagation()
+    
+    console.log('click')
+    onSelectNote(note) 
+  }
 
   return (
-    <div className={`note`} style={{ backgroundColor: note.style.backgroundColor || "#fff" }}>
-      <h1>{note.info.title}</h1>
-      <p>{note.info.txt}</p>
+    <div 
+    className={`note`} 
+    onClick={handleClick}
+    style={{ backgroundColor: note.style.backgroundColor || "#fff" }}
+    ref={colorPickerRef}
+    >
+    <DynamicCmp
+    info={note.info}
+    type={note.type}/>
       
 
  <NoteActions
@@ -57,5 +55,6 @@ export function NotePreview({ note, onRemoveNote, onUpdateNote }) {
       />
 
     </div>
-  );
+  )
 }
+

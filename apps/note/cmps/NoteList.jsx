@@ -1,11 +1,12 @@
 import { NotePreview } from "./NotePreview.jsx"
-const {useState, Fragment} = React
+const {useState, Fragment,useRef, useEffect} = React
 
-export function NoteList({pinnedNotes, notes, onRemoveNote , onUpdateNote}) {
+export function NoteList({pinnedNotes, notes, onRemoveNote , onUpdateNote, onSelectNote,selectedNoteId}) {
    
     if (!notes || notes.length === 0) {
         return <div className="no-notes">No notes to show</div>
     }
+
 
     const unpinnedNotes = notes.filter(note => !note.isPinned)
 
@@ -21,6 +22,7 @@ export function NoteList({pinnedNotes, notes, onRemoveNote , onUpdateNote}) {
                                 note={note}
                                 onRemoveNote={onRemoveNote}
                                 onUpdateNote={onUpdateNote}
+                                onSelectNote={onSelectNote} 
                             />
                         ))}
                     </ul>
@@ -37,6 +39,7 @@ export function NoteList({pinnedNotes, notes, onRemoveNote , onUpdateNote}) {
                                 note={note}
                                 onRemoveNote={onRemoveNote}
                                 onUpdateNote={onUpdateNote}
+                                onSelectNote={onSelectNote} 
                             />
                         ))}
                     </ul>

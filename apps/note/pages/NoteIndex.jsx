@@ -1,8 +1,11 @@
 import { NoteList } from "../cmps/NoteList.jsx"
 import {AddNote } from "../cmps/AddNote.jsx"
 import { noteService } from "../services/note.service.js"
+
 import { Modal } from "../cmps/Modal.jsx"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service.js"
+import { NoteEdit } from "../cmps/NoteEdit.jsx"
+
 
 
 const { Link } = ReactRouterDOM
@@ -12,6 +15,9 @@ export function NoteIndex({ logo }) {
     
     const [notes, setNotes] = useState(null)
     const [showModal, setShowModal] = useState(false)
+    const [selectedNote, setSelectedNote] = useState(null)
+
+
     
     
     useEffect(() => {
@@ -21,6 +27,7 @@ export function NoteIndex({ logo }) {
    const pinnedNotes = notes ? noteService.createPinnedList(notes) : []
     
     function onRemoveNote(noteId) {
+        console.log('Deleting note id:', noteId)
         noteService.remove(noteId)
         .then(() => {
             showSuccessMsg('Note Removed Successfully!')
@@ -42,8 +49,31 @@ function onUpdateNote(updatedNote) {
   })
 }
 
+function onCloseModal() {
+  setShowModal(false)
+  setSelectedNote(null)
+}
 
 
+function onSaveEditedNote(updatedNote) {
+  noteService.save(updatedNote).then(savedNote => {
+    setNotes(prev =>
+      prev.map(note => note.id === savedNote.id ? savedNote : note)
+    )
+    setShowModal(false)
+    setSelectedNote(null)
+    showSuccessMsg('Note saved!')
+  }).catch(() => {
+    showErrorMsg('Failed to save note')
+  })
+}
+
+
+function onSelectNote(note) {
+    console.log('on selected', note)
+  setSelectedNote(note) 
+  setShowModal(true)
+}
 
 
 function onAddNote(noteToSave) {
@@ -84,8 +114,30 @@ return  <div className="notes-container">
                 <main className="notes-main-content">
                     <AddNote onAddNote={onAddNote} />
                     
-                    <NoteList notes={notes} pinnedNotes={pinnedNotes} logo={logo} onRemoveNote={onRemoveNote} onUpdateNote={onUpdateNote} />
+                    <NoteList
+                        notes={notes}
+                        pinnedNotes={pinnedNotes}
+                        onRemoveNote={onRemoveNote}
+                        onUpdateNote={onUpdateNote}
+                        onSelectNote={onSelectNote} 
+                        selectedNoteId={selectedNote ? selectedNote.id : null}
+                        />
+
                 </main>
+                <Modal isOpen={showModal} onClose={onCloseModal}>
+                    <NoteEdit
+                        note={selectedNote}
+                        onSave={(updatedNote) => {
+                        onUpdateNote(updatedNote)
+                        onCloseModal()
+                        showSuccessMsg('Note saved!')
+                        }}
+                    />
+                    </Modal>
+
+
+
+
             </div>
 
 }

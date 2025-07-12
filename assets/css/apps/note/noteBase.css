@@ -18,34 +18,34 @@ body{
 }
 
 .note-actions{
-    
     position: absolute;
     display: none;
-    
     font-size: 1px;
-    
-    
-
 }
 
 .note:hover .note-actions{
     position: absolute;
     bottom: 0;
-    display: inline-block;
+    display: flex;
     flex-grow: inherit;
     opacity: 20% 0.3ms;
     gap: 2px;
     left:15px;
 }
 
+
+
 .note-expanded .note-actions{
     position: absolute;
     bottom: 0px;
-    display: inline-block;
-    gap: 2px;
+   
+    display: flex;
     padding: 0.2rem;
     left: 15px;
 }
+
+
+
 
 
 .note-actions .submit-btn{
@@ -65,4 +65,23 @@ body{
 
 .submit-btn{
    margin-inline-end: 0;
+}
+
+.note-actions-container{
+    color: aqua;
+}
+
+.modal-content{
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+    padding: none;
+}
+
+.modal-content .note{
+    margin: none;
+    
+}
+.note-actions button {
+    padding: 0;
 }

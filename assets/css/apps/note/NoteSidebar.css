@@ -2,9 +2,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  margin-top: 80px;
+
   height: 100vh;
-  width: 50px; /* collapsed width */
+  margin-top:80px;
+  width: 50px; 
   background: white;
   border-right: 1px solid #e0e0e0;
   box-sizing: border-box;
@@ -18,10 +19,10 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-  align-items: center; /* center icons when collapsed */
+  align-items: center; 
 }
 
-/* Expand on hover */
+
 .notes-side-bar-container:hover {
   width: 250px;
   align-items: stretch;
@@ -29,14 +30,14 @@
   padding-right: 0;
 }
 
-/* Sidebar wrapper */
+
 .notes-side-bar {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-/* Each link wrapper */
+
 .sidebar-link {
   padding: 12px;
   width: 90%;

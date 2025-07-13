@@ -47,24 +47,24 @@ export function NoteEdit({ note, onSave }) {
   return (
     <div className="note-edit note" 
     style={{ backgroundColor}}>
-      <input
-        type="text"
-        value={title}
-        onChange={e => setTitle(e.target.value)}
-        placeholder="Title"
-        style={{
-          width: '100%',
-          fontWeight: 'bold',
-          fontSize: '1.2em',
-          border: 'none',
-          outline: 'none',
-          background: 'transparent',
-          marginBottom: '10px',
-        }}
-      />
       {url &&(
         <img src={url} alt="your img" onClick={AddNoteImg}/>
       )}
+        <input
+          type="text"
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+          placeholder="Title"
+          style={{
+            width: '100%',
+            fontWeight: 'bold',
+            fontSize: '1.2em',
+            border: 'none',
+            outline: 'none',
+            background: 'transparent',
+            marginBottom: '10px',
+          }}
+        />
       <textarea
         value={txt}
         onChange={e => setTxt(e.target.value)}

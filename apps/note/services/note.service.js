@@ -20,24 +20,107 @@ const gNotes = [
         createdAt: 1112223,
         type: 'NoteImg',
         isPinned: false,
-        info: { url: './img/noteImgs/horse.jpeg', title: 'Bobi and Me' ,txt:''},
+        info: {
+            url: './img/noteImgs/horse.jpeg',
+            title: 'Bobi and Me',
+            txt: ''
+        },
         style: { backgroundColor: '#fff' }
     },
     {
         id: 'n103',
-        createdAt: 1112224,
+        createdAt: 1112230,
         type: 'NoteTxt',
         isPinned: false,
+        style: { backgroundColor: '#fce4ec' },
         info: {
-            title: 'Get my stuff together',
-            todos: [
-                { txt: 'Driving license', doneAt: null },
-                { txt: 'Coding power', doneAt: 187111111 }
-            ]
+            title: 'Grocery List',
+            txt: 'Milk, Eggs, Bread, Butter, Tomatoes'
+        }
+    },
+    {
+        id: 'n104',
+        createdAt: 1112240,
+        type: 'NoteImg',
+        isPinned: true,
+        info: {
+            url: './img/noteImgs/beach.jpeg',
+            title: 'Summer Memories',
+            txt: 'Vacation in Greece 🏖️'
         },
-        style: { backgroundColor: '#fff' }
+        style: { backgroundColor: '#e3f2fd' }
+    },
+    {
+        id: 'n105',
+        createdAt: 1112250,
+        type: 'NoteTxt',
+        isPinned: false,
+        style: { backgroundColor: '#fff3e0' },
+        info: {
+            title: 'Meeting Notes',
+            txt: 'Discuss Q3 roadmap and budget approvals.'
+        }
+    },
+    {
+        id: 'n106',
+        createdAt: 1112260,
+        type: 'NoteImg',
+        isPinned: false,
+        info: {
+            url: './img/noteImgs/cat.jpeg',
+            title: 'Sleepy Cat',
+            txt: 'So cute!'
+        },
+        style: { backgroundColor: '#f3e5f5' }
+    },
+    {
+        id: 'n107',
+        createdAt: 1112270,
+        type: 'NoteTxt',
+        isPinned: true,
+        style: { backgroundColor: '#f1f8e9' },
+        info: {
+            title: 'Books to Read',
+            txt: '1984, Sapiens, Atomic Habits, The Alchemist'
+        }
+    },
+    {
+        id: 'n108',
+        createdAt: 1112280,
+        type: 'NoteImg',
+        isPinned: false,
+        info: {
+            url: './img/noteImgs/mountain.jpeg',
+            title: 'Nature Escape',
+            txt: ''
+        },
+        style: { backgroundColor: '#e0f7fa' }
+    },
+    {
+        id: 'n109',
+        createdAt: 1112290,
+        type: 'NoteTxt',
+        isPinned: false,
+        style: { backgroundColor: '#ede7f6' },
+        info: {
+            title: 'App Ideas',
+            txt: 'Mood tracker, Plant care reminder, Daily doodle app'
+        }
+    },
+    {
+        id: 'n110',
+        createdAt: 1112300,
+        type: 'NoteImg',
+        isPinned: true,
+        info: {
+            url: './img/noteImgs/sunset.jpeg',
+            title: 'Golden Hour',
+            txt: 'Captured this yesterday!'
+        },
+        style: { backgroundColor: '#fff8e1' }
     }
-]
+];
+
 
 _createNotes()
 

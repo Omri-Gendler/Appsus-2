@@ -100,12 +100,14 @@
 
 }
 
-.modal-content textarea{
-  height: fit-content;
+.note input{
+  margin-left:0;
+  
 }
 
 .modal-content img{
-  max-width: 90%;
+  max-width: 95%;
+  place-content: center;
   max-height: 500px;
 }
 .edit-note .note {

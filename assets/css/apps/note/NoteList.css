@@ -38,6 +38,14 @@
   .note-list {
     column-count: 1;
   }
+  .add-note-container{
+    max-width:100px;
+  }
+}
+@media (max-width: 500px) {
+  .add-note-container{
+    margin-left: 20px;
+  }
 }
 
 

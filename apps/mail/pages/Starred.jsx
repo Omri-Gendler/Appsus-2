@@ -29,7 +29,7 @@ export function Starred() {
         <div className="mail-list-container">
 
 
-            <ul className="mai-list">
+            <ul className="mail-list mail">
                 {starredMails.map(mail => (
                     mail.isStarred &&
                     <li key={mail.id}>

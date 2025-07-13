@@ -4,7 +4,7 @@ import { mailService } from "../services/mail.service.js"
 import { MailDetails } from "./MailDetails.jsx"
 import { Starred } from "./Starred.jsx"
 
-const { Link, Route, Routes, NavLink, useNavigate } = ReactRouterDOM
+const { Link, Route, Routes, NavLink, useNavigate, useLocation } = ReactRouterDOM
 const Router = ReactRouterDOM.HashRouter
 const { useState, useEffect } = React
 
@@ -33,14 +33,12 @@ export function MailIndex({ logo }) {
     function onRemoveMail(mailId) {
         mailService.remove(mailId)
             .then(() => {
-                showSuccessMsg('Mail Removed Successfully!')
                 setMails((prevMails) =>
                     prevMails.filter(mail => mail.id !== mailId)
                 )
             })
             .catch(err => {
                 console.log(err)
-                showErrorMsg('Problem removing Mail')
             })
     }
 
@@ -100,6 +98,9 @@ export function MailIndex({ logo }) {
     if (!mails) return <div className="container">Loading...</div>
     const countUnreadMail = countUnreadMails()
     console.log('countUnreadMails:', countUnreadMail)
+
+    const location = useLocation()
+    const isMailInbox = location.pathname === '/mail'
     return (
         <div className="mail-inbox">
 
@@ -129,7 +130,7 @@ export function MailIndex({ logo }) {
                 </div>
             </aside>
             <main className="mail-main-content">
-                {<MailFilter mails={mails} onSetFilterBy={onSetFilterBy} filterBy={filterBy} />}
+                {isMailInbox && < MailFilter mails={mails} onSetFilterBy={onSetFilterBy} filterBy={filterBy} />}
                 <Routes>
                     <Route path="" element={<MailList mails={mails} logo={logo} onStarredBtn={onStarredBtn} onRemoveMail={onRemoveMail} onUnreadBtn={onUnreadBtn} />} />
                     <Route path="starred" element={<Starred />} />

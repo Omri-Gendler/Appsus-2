@@ -12,10 +12,10 @@
 @import './apps/note/noteList.css';
 @import './apps/note/noteIndex.css';
 @import './apps/note/noteSideBar.css';
-@import './apps/mail/MailIndex.css';
-@import './apps/mail/MailList.css';
-@import './apps/mail/MailPreview.css';
-@import './apps/mail/MailDetails.css';
-@import './apps/mail/MailFilter.css';
+@import './apps/mail/mailIndex.css';
+@import './apps/mail/mailList.css';
+@import './apps/mail/mailPreview.css';
+@import './apps/mail/mailDetails.css';
+@import './apps/mail/mailFilter.css';
 
 @import './basics/mq.css';

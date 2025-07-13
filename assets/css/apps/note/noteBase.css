@@ -27,10 +27,11 @@ body{
     position: absolute;
     bottom: 0;
     display: flex;
-    flex-grow: inherit;
+    
     opacity: 20% 0.3ms;
     gap: 2px;
-    left:20px;
+    left:10px;
+    padding: 0px;
 }
 
 
@@ -38,7 +39,7 @@ body{
 .note-expanded .note-actions{
     position: absolute;
     bottom: 0px;
-   margin-left: 15px;
+  
     display: flex;
     padding: 0.2rem;
     left: 15px;
@@ -49,27 +50,14 @@ body{
 
 
 .note-actions .submit-btn{
-    position: relative;
-    box-shadow: 0;
-    justify-content: center;
-    
     text-decoration: none;
-    color: #000000;
-    border: none;
-
-   
-   
-    cursor: pointer;
-    outline: none;
+    color: #000000; 
+}
+.note-actions button{
+    padding: 0;
 }
 
-.submit-btn{
-   margin-inline-end: 0;
-}
 
-.note-actions-container{
-    color: aqua;
-}
 
 .modal-content{
     background-color: transparent;
@@ -81,7 +69,4 @@ body{
 .modal-content .note{
     margin: none;
     
-}
-.note-actions button {
-    padding: 0;
 }
